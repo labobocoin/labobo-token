@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LABOBO Token | Next-Gen Cryptocurrency</title>
+    <title>LABOBO Token | The Ultimate Meme Coin Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --accent: #00cec9;
-            --dark: #2d3436;
-            --light: #f7f9fc;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFD166;
+            --dark: #1A1A2E;
+            --light: #F7F9FC;
+            --purple: #6A67CE;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Nunito', sans-serif;
         }
         
         body {
-            background-color: #0f172a;
-            color: #e2e8f0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
             overflow-x: hidden;
-            background: radial-gradient(circle at 10% 20%, rgba(33, 36, 71, 0.8) 0%, rgba(15, 23, 42, 1) 80%);
+            background-attachment: fixed;
+        }
+        
+        .comic-font {
+            font-family: 'Comic Neue', cursive;
         }
         
         .container {
@@ -43,9 +47,9 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(26, 26, 46, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+            border-bottom: 3px dashed var(--accent);
         }
         
         nav {
@@ -58,16 +62,16 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: #fff;
             text-decoration: none;
         }
         
         .logo-icon {
             color: var(--accent);
-            font-size: 28px;
+            font-size: 32px;
+            transform: rotate(10deg);
         }
         
         .nav-links {
@@ -76,46 +80,50 @@
         }
         
         .nav-links a {
-            color: #cbd5e1;
+            color: #FFD166;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 18px;
         }
         
         .nav-links a:hover {
-            color: #fff;
+            color: #FF6B6B;
+            transform: scale(1.1);
         }
         
         .nav-links a::after {
-            content: '';
+            content: '★';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
         
         .nav-links a:hover::after {
-            width: 100%;
+            opacity: 1;
+            bottom: -20px;
         }
         
         .cta-button {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--primary), var(--purple));
             color: white;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 800;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+            border: 3px solid #fff;
+            font-size: 18px;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
         }
         
         /* Hero Section */
@@ -123,106 +131,120 @@
             padding: 180px 0 100px;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         
         .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .hero-text {
-            flex: 1;
-            z-index: 2;
-        }
-        
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 5rem;
             font-weight: 800;
             margin-bottom: 20px;
-            line-height: 1.2;
-            font-family: 'Orbitron', sans-serif;
+            line-height: 1.1;
+            text-shadow: 4px 4px 0px var(--purple);
         }
         
-        .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero h1 span.highlight {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 span.highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: rgba(106, 103, 206, 0.3);
+            z-index: -1;
+            transform: rotate(-2deg);
         }
         
         .hero p {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: var(--secondary);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .subtitle {
+            font-size: 2.2rem;
+            color: var(--accent);
             margin-bottom: 30px;
-            color: #cbd5e1;
-            max-width: 600px;
+            text-shadow: 2px 2px 0px var(--primary);
         }
         
         .hero-btns {
             display: flex;
-            gap: 15px;
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .token-stats {
-            display: flex;
-            gap: 40px;
+            gap: 20px;
+            justify-content: center;
             margin-top: 40px;
         }
         
-        .stat-item h3 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            border: 3px solid #fff;
+            font-size: 18px;
+            box-shadow: 0 6px 15px rgba(78, 205, 196, 0.4);
         }
         
-        .stat-item p {
-            font-size: 1rem;
-            color: #94a3b8;
-            margin: 0;
+        .btn-secondary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.6);
         }
         
-        .crypto-image {
+        .meme-display {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .meme-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            border: 3px dashed var(--accent);
+            max-width: 250px;
+            transition: all 0.3s ease;
+        }
+        
+        .meme-item:hover {
+            transform: rotate(5deg) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .meme-item img {
             width: 100%;
-            max-width: 500px;
-            animation: float 6s ease-in-out infinite;
+            border-radius: 15px;
+            border: 3px solid white;
         }
         
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .meme-text {
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.2rem;
         }
         
         /* Features Section */
         .features {
             padding: 100px 0;
+            background: url('https://i.ibb.co/0sKd7t7/dots-bg.png') center/cover;
         }
         
         .section-header {
@@ -231,322 +253,332 @@
         }
         
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 15px;
-            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-shadow: 3px 3px 0px var(--primary);
         }
         
         .section-header p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            max-width: 700px;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.6;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
         
         .feature-card {
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
             padding: 40px 30px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            backdrop-filter: blur(10px);
+            border: 3px dashed var(--secondary);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(124, 58, 237, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-15px) rotate(2deg);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 4rem;
             margin-bottom: 25px;
             color: var(--accent);
+            text-shadow: 2px 2px 0px var(--primary);
         }
         
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
         
         .feature-card p {
-            color: #94a3b8;
+            color: #fff;
             line-height: 1.8;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card::before {
+            content: '★';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--accent);
+            opacity: 0.5;
         }
         
         /* Roadmap Section */
         .roadmap {
             padding: 100px 0;
-            background: rgba(15, 23, 42, 0.7);
-        }
-        
-        .timeline {
+            background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
             position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
         }
         
-        .timeline::after {
+        .roadmap::before {
             content: '';
             position: absolute;
-            width: 6px;
-            background: var(--gradient);
             top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
             left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/6mYVd0K/memebg.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
         }
         
-        .timeline-item:nth-child(even) {
-            left: 50%;
+        .roadmap-content {
+            position: relative;
+            z-index: 2;
         }
         
-        .timeline-content {
-            padding: 30px;
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 15px;
-            border: 1px solid rgba(124, 58, 237, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-        
-        .timeline-content p {
-            color: #94a3b8;
-            line-height: 1.6;
-        }
-        
-        .timeline-date {
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: var(--gradient);
-            border: 4px solid #0f172a;
-            top: 30px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -13px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -13px;
-        }
-        
-        /* Whitepaper Section */
-        .whitepaper {
-            padding: 100px 0;
-        }
-        
-        .whitepaper-container {
+        .roadmap-item {
             display: flex;
-            gap: 50px;
+            gap: 40px;
+            margin-bottom: 60px;
             align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 25px;
+            border-left: 8px solid var(--accent);
+            transition: all 0.3s ease;
         }
         
-        .whitepaper-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+        .roadmap-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 8px solid var(--primary);
         }
         
-        .whitepaper-content {
-            flex: 1;
+        .roadmap-date {
+            min-width: 150px;
+            text-align: center;
         }
         
-        .whitepaper-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        .whitepaper-content h2 {
+        .roadmap-date .date {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 25px;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .whitepaper-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: #cbd5e1;
-        }
-        
-        .whitepaper-features {
-            margin-bottom: 30px;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .feature-item i {
             color: var(--accent);
+            text-shadow: 2px 2px 0px var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .roadmap-date .phase {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        .roadmap-info h3 {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .roadmap-info ul {
+            padding-left: 30px;
+        }
+        
+        .roadmap-info li {
             font-size: 1.2rem;
-            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #fff;
+            position: relative;
+        }
+        
+        .roadmap-info li::marker {
+            content: '🤣 ';
+            font-size: 1.5rem;
+        }
+        
+        /* Tokenomics Section */
+        .tokenomics {
+            padding: 100px 0;
+            text-align: center;
+            background: rgba(26, 26, 46, 0.8);
+        }
+        
+        .token-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 3px dashed var(--purple);
+            position: relative;
+        }
+        
+        .token-card h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .token-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .token-stat {
+            background: rgba(106, 103, 206, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid var(--purple);
+        }
+        
+        .token-stat .value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .token-stat .label {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        
+        /* Community Section */
+        .community {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--purple), #1a1a2e);
+            text-align: center;
+        }
+        
+        .community h2 {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 0px var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link .icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 3rem;
+            transition: all 0.3s ease;
+            border: 3px solid var(--accent);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-10px);
+        }
+        
+        .social-link:hover .icon {
+            transform: scale(1.2) rotate(10deg);
+            background: var(--primary);
         }
         
         /* Footer */
         footer {
             padding: 60px 0 30px;
-            background: rgba(15, 23, 42, 0.9);
-            border-top: 1px solid rgba(124, 58, 237, 0.1);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            background: rgba(10, 10, 20, 0.95);
+            text-align: center;
+            border-top: 3px dashed var(--accent);
         }
         
         .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
             margin-bottom: 20px;
         }
         
-        .footer-about p {
-            color: #94a3b8;
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: var(--secondary);
             line-height: 1.8;
-            margin-bottom: 20px;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
+        .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
         }
         
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: all 0.3s ease;
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
         
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
-        .footer-links h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: #fff;
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #fff;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #64748b;
-            font-size: 0.9rem;
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
         }
         
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-content {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .roadmap-item {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .hero-btns {
-                justify-content: center;
-            }
-            
-            .hero p {
-                margin: 0 auto 30px;
-            }
-            
-            .token-stats {
-                justify-content: center;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-                left: 0 !important;
-            }
-            
-            .timeline-item::after {
-                left: 18px !important;
-            }
-            
-            .whitepaper-container {
-                flex-direction: column;
+            .roadmap-date {
+                margin-bottom: 20px;
             }
         }
         
@@ -556,6 +588,19 @@
             }
             
             .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-header h2 {
                 font-size: 2.8rem;
             }
         }
@@ -566,50 +611,49 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-coins logo-icon"></i>
+                <a href="#" class="logo comic-font">
+                    <i class="fas fa-dog logo-icon floating"></i>
                     LABOBO
                 </a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#features">Features</a>
-                    <a href="#roadmap">Roadmap</a>
-                    <a href="#whitepaper">Whitepaper</a>
+                    <a href="#roadmap">Memes</a>
                     <a href="#tokenomics">Tokenomics</a>
+                    <a href="#community">Community</a>
                 </div>
-                <a href="#" class="cta-button">Launch App</a>
+                <a href="#" class="cta-button comic-font pulse">Buy $LABOBO</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Revolutionizing <span>Digital Finance</span> with LABOBO Token</h1>
-                    <p>LABOBO is a next-generation cryptocurrency designed for speed, security, and sustainability. Join the future of decentralized finance with our innovative blockchain solution.</p>
-                    <div class="hero-btns">
-                        <a href="#" class="cta-button">Buy LABOBO</a>
-                        <a href="#" class="btn-secondary">Whitepaper</a>
-                    </div>
-                    <div class="token-stats">
-                        <div class="stat-item">
-                            <h3>100M+</h3>
-                            <p>Tokens Issued</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>12s</h3>
-                            <p>Block Time</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>0.01%</h3>
-                            <p>Transaction Fee</p>
-                        </div>
-                    </div>
+                <h1 class="comic-font">LABOBO: The <span class="highlight">Meme Coin</span> That's Actually FUN!</h1>
+                <p class="comic-font">Forget boring finance! LABOBO is here to bring laughter, memes, and good vibes to the crypto world. No utility, just pure entertainment! 🚀</p>
+                
+                <div class="subtitle comic-font">"We're not just a coin, we're a vibe!"</div>
+                
+                <div class="hero-btns">
+                    <a href="#" class="cta-button comic-font">Buy Now & Laugh</a>
+                    <a href="#" class="btn-secondary comic-font">Join Meme Contest</a>
                 </div>
-                <div class="hero-image">
-                    <img src="https://i.ibb.co/3rG2xQf/crypto-illustration.png" alt="LABOBO Token" class="crypto-image">
+                
+                <div class="meme-display">
+                    <div class="meme-item">
+                        <img src="https://i.ibb.co/0j2vC1x/meme1.jpg" alt="LABOBO Meme">
+                        <div class="meme-text comic-font">When Lambo? Soon!</div>
+                    </div>
+                    <div class="meme-item">
+                        <img src="https://i.ibb.co/TqQb1GJ/meme2.jpg" alt="LABOBO Meme">
+                        <div class="meme-text comic-font">HODL Like a Boss</div>
+                    </div>
+                    <div class="meme-item">
+                        <img src="https://i.ibb.co/0j2vC1x/meme1.jpg" alt="LABOBO Meme">
+                        <div class="meme-text comic-font">To the Moon! 🚀</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -619,39 +663,39 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2>Why LABOBO Stands Out</h2>
-                <p>Discover the powerful features that make LABOBO the cryptocurrency of choice for the future</p>
+                <h2 class="comic-font">Why LABOBO is the Ultimate Meme Coin</h2>
+                <p class="comic-font">We're not trying to change the world, just make crypto fun again!</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-bolt feature-icon"></i>
-                    <h3>Lightning Fast Transactions</h3>
-                    <p>Our advanced blockchain technology processes transactions in under 12 seconds, making it ideal for everyday use.</p>
+                    <i class="fas fa-laugh-beam feature-icon"></i>
+                    <h3 class="comic-font">100% Pure Entertainment</h3>
+                    <p>No boring whitepapers, no complex DeFi strategies. Just memes, laughs, and good times for the community.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>Military-Grade Security</h3>
-                    <p>With quantum-resistant encryption and multi-layer security protocols, your assets are always protected.</p>
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3 class="comic-font">Amazing Community</h3>
+                    <p>Join the funniest, most supportive group of degenerates in crypto. Our Telegram is legendary!</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-leaf feature-icon"></i>
-                    <h3>Eco-Friendly Blockchain</h3>
-                    <p>Our proof-of-stake consensus mechanism uses 99% less energy than traditional proof-of-work systems.</p>
+                    <i class="fas fa-gift feature-icon"></i>
+                    <h3 class="comic-font">Regular Meme Contests</h3>
+                    <p>Win $LABOBO prizes for creating the dankest memes. We reward creativity and humor!</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-wallet feature-icon"></i>
-                    <h3>Smart Wallet Integration</h3>
-                    <p>Seamlessly manage your assets with our intuitive wallet that supports all major cryptocurrencies.</p>
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3 class="comic-font">Zero Utility, Maximum Fun</h3>
+                    <p>We embrace our lack of utility! Our only goal is to create laughter and joy in the crypto space.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-code feature-icon"></i>
-                    <h3>Developer Friendly</h3>
-                    <p>Comprehensive SDKs and APIs make building on the LABOBO blockchain simple and efficient.</p>
+                    <i class="fas fa-dog feature-icon"></i>
+                    <h3 class="comic-font">Cute Mascot</h3>
+                    <p>Meet Labo, our adorable mascot who loves treats, belly rubs, and making crypto fun!</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-globe feature-icon"></i>
-                    <h3>Global Accessibility</h3>
-                    <p>Available in over 150 countries with multi-language support and 24/7 customer service.</p>
+                    <i class="fas fa-fire feature-icon"></i>
+                    <h3 class="comic-font">Long-Term Vibes</h3>
+                    <p>We're not a pump-and-dump. We're building a lasting community of meme lovers and crypto enthusiasts.</p>
                 </div>
             </div>
         </div>
@@ -661,95 +705,131 @@
     <section class="roadmap" id="roadmap">
         <div class="container">
             <div class="section-header">
-                <h2>Project Roadmap</h2>
-                <p>Our strategic plan for development and growth over the coming years</p>
+                <h2 class="comic-font">Our Meme Journey</h2>
+                <p class="comic-font">The roadmap to becoming the funniest coin in crypto!</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">Q3 2025</span>
-                        <h3>Project Inception</h3>
-                        <p>Concept development, team formation, and initial whitepaper release. Seed funding round completed.</p>
+            <div class="roadmap-content">
+                <div class="roadmap-item">
+                    <div class="roadmap-date">
+                        <div class="date comic-font">Q3 2025</div>
+                        <div class="phase comic-font">Phase 1: Launch</div>
+                    </div>
+                    <div class="roadmap-info">
+                        <h3 class="comic-font">The Birth of a Meme Legend</h3>
+                        <ul>
+                            <li>Official launch on PancakeSwap</li>
+                            <li>First 1000 "Labo Bros" community members</li>
+                            <li>First meme contest with $LABOBO prizes</li>
+                            <li>Labo mascot design finalized</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">Q4 2025</span>
-                        <h3>Testnet Launch</h3>
-                        <p>Testnet deployment with core functionality. Community testing and bug bounty program initiated.</p>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">
+                        <div class="date comic-font">Q4 2025</div>
+                        <div class="phase comic-font">Phase 2: Growth</div>
+                    </div>
+                    <div class="roadmap-info">
+                        <h3 class="comic-font">Spreading the Laughter</h3>
+                        <ul>
+                            <li>Community reaches 10,000 holders</li>
+                            <li>First Labo merchandise store launch</li>
+                            <li>Monthly meme contests become tradition</li>
+                            <li>Partnership with meme content creators</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">Q1 2026</span>
-                        <h3>Mainnet Launch</h3>
-                        <p>Official mainnet deployment. Token listing on major exchanges. Wallet application release.</p>
+                <div class="roadmap-item">
+                    <div class="roadmap-date">
+                        <div class="date comic-font">2026</div>
+                        <div class="phase comic-font">Phase 3: Domination</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">Q2 2026</span>
-                        <h3>DeFi Ecosystem</h3>
-                        <p>Launch of decentralized exchange, staking platform, and lending protocols built on LABOBO chain.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">Q4 2026</span>
-                        <h3>Global Expansion</h3>
-                        <p>Partnerships with payment processors for real-world adoption. Expansion to Asian and European markets.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2027</span>
-                        <h3>Metaverse Integration</h3>
-                        <p>Development of LABOBO-based metaverse platform and NFT marketplace with VR compatibility.</p>
+                        <div class="roadmap-info">
+                        <h3 class="comic-font">Meme Takeover</h3>
+                        <ul>
+                            <li>100,000+ community members</li>
+                            <li>Labo animated series in development</li>
+                            <li>First real-world Labo meetup event</li>
+                            <li>Featured in mainstream meme culture</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Whitepaper Section -->
-    <section class="whitepaper" id="whitepaper">
+    <!-- Tokenomics Section -->
+    <section class="tokenomics" id="tokenomics">
         <div class="container">
-            <div class="whitepaper-container">
-                <div class="whitepaper-content">
-                    <h2>Technical Whitepaper</h2>
-                    <p>Our comprehensive whitepaper details the technical architecture, economic model, and long-term vision for the LABOBO ecosystem.</p>
-                    
-                    <div class="whitepaper-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>Advanced Consensus Mechanism</h3>
-                                <p>Detailed explanation of our proprietary Proof-of-Engagement consensus protocol</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>Tokenomics & Distribution</h3>
-                                <p>Complete breakdown of token allocation, vesting schedules, and economic incentives</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>Security Architecture</h3>
-                                <p>In-depth analysis of our multi-layered security approach and audit processes</p>
-                            </div>
-                        </div>
+            <div class="section-header">
+                <h2 class="comic-font">Tokenomics (Because We Have To)</h2>
+                <p class="comic-font">Totally transparent, just like our lack of utility!</p>
+            </div>
+            
+            <div class="token-card">
+                <h3 class="comic-font">$LABOBO Distribution</h3>
+                
+                <div class="token-stats">
+                    <div class="token-stat">
+                        <div class="value comic-font">1 Trillion</div>
+                        <div class="label comic-font">Total Supply</div>
                     </div>
-                    
-                    <a href="#" class="cta-button">
-                        <i class="fas fa-download"></i> Download Whitepaper
-                    </a>
+                    <div class="token-stat">
+                        <div class="value comic-font">5%</div>
+                        <div class="label comic-font">Marketing</div>
+                    </div>
+                    <div class="token-stat">
+                        <div class="value comic-font">10%</div>
+                        <div class="label comic-font">Team (Locked)</div>
+                    </div>
+                    <div class="token-stat">
+                        <div class="value comic-font">85%</div>
+                        <div class="label comic-font">Community</div>
+                    </div>
                 </div>
-                <div class="whitepaper-image">
-                    <img src="https://i.ibb.co/3YVtLw7/whitepaper.png" alt="LABOBO Whitepaper">
-                </div>
+                
+                <p class="comic-font" style="font-size: 1.4rem; color: var(--accent);">Tax? What tax? We're too busy making memes to worry about taxes!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <div class="container">
+            <h2 class="comic-font">Join Our Meme Family</h2>
+            <p class="comic-font" style="font-size: 1.8rem; max-width: 800px; margin: 0 auto 40px;">The funniest community in crypto awaits! Come for the memes, stay for the vibes.</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <div class="icon">
+                        <i class="fab fa-telegram">https://t.me/LABOBO567</i>
+                    </div>
+                    <span class="comic-font">Telegram</span>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="icon">
+                        <i class="fab fa-twitter">https://x.com/mmdlgryb784567?t=kHK-nX56vEB276x-zdfoiw&s=09</i>
+                    </div>
+                    <span class="comic-font">Twitter</span>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <span class="comic-font">Discord</span>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <span class="comic-font">TikTok</span>
+                </a>
+                <a href="#" class="social-link">
+                    <div class="icon">
+                        <i class="fab fa-reddit"></i>
+                    </div>
+                    <span class="comic-font">Reddit</span>
+                </a>
             </div>
         </div>
     </section>
@@ -757,55 +837,9 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <i class="fas fa-coins"></i>
-                        LABOBO
-                    </div>
-                    <p>LABOBO is a next-generation blockchain platform designed for speed, security, and sustainability. Join us in building the future of decentralized finance.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-medium"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">GitHub Repository</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Developer Tools</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Community</h3>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Ambassador Program</a></li>
-                        <li><a href="#">Governance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                        <li><a href="#">Risk Disclosure</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 LABOBO Token. All rights reserved. The future of finance is decentralized.</p>
-            </div>
+            <div class="footer-logo comic-font">LABO<span>BO</span></div>
+            <p class="disclaimer comic-font">Disclaimer: $LABOBO is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap. The coin is completely useless and for entertainment purposes only. Please spend responsibly and remember: never invest more than you can afford to lose while laughing.</p>
+            <p class="copyright comic-font">© 2023 LABOBO Token. All rights reserved. Or not. We're too busy making memes to care.</p>
         </div>
     </footer>
 
@@ -824,31 +858,40 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.backgroundColor = 'rgba(10, 10, 20, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
             } else {
-                header.style.backgroundColor = 'rgba(15, 23, 42, 0.9)';
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
                 header.style.boxShadow = 'none';
             }
         });
         
-        // Animation on scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
+        // Fun hover effects
+        const memeItems = document.querySelectorAll('.meme-item');
+        memeItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'rotate(5deg) scale(1.1)';
             });
-        }, observerOptions);
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'rotate(0) scale(1)';
+            });
+        });
         
-        document.querySelectorAll('.feature-card, .timeline-content').forEach(el => {
-            observer.observe(el);
+        // Random confetti on button click
+        const buttons = document.querySelectorAll('.cta-button, .btn-secondary');
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("Wow! Such click! Much enthusiasm! 🎉 (This is a demo - real site would take you to buy $LABOBO)");
+            });
+        });
+        
+        // Comic-style animations
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelector('.hero h1').style.opacity = 1;
+                document.querySelector('.hero p').style.opacity = 1;
+            }, 500);
         });
     </script>
 </body>
