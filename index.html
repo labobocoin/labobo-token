@@ -1,941 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LABOBO - The Future of Meme Coins</title>
+    <title>ثورة لابوبو - العضوية الرقمية الفريدة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ff3e78;
-            --accent2: #ff8a00;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gradient: linear-gradient(45deg, var(--primary), var(--secondary));
-            --gradient2: linear-gradient(45deg, var(--accent2), var(--accent));
+            --primary: #6a45d1;
+            --secondary: #ff6b6b;
+            --accent: #feca57;
+            --dark: #2c3e50;
+            --light: #f7f9fc;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #1a0c40, #24243e);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
         }
         
         header {
-            background: rgba(10, 10, 35, 0.9);
+            background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .nav-container {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent);
         }
         
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient2);
-            border-radius: 50%;
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            animation: pulse 2s infinite;
-        }
-        
-        .logo-icon i {
-            font-size: 24px;
-            color: white;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 900;
-            background: linear-gradient(to right, #ff8a00, #da1b60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
             gap: 2rem;
         }
         
-        nav a {
+        .nav-links a {
             color: var(--light);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
+            padding: 0.5rem 0;
         }
         
-        nav a:hover {
-            color: var(--accent2);
+        .nav-links a:hover {
+            color: var(--accent);
         }
         
-        nav a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 3px;
-            background: var(--accent2);
-            transition: width 0.3s;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
         
-        nav a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
         
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
-            overflow: hidden;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(106, 69, 209, 0.2) 0%, transparent 40%);
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,100 0,100" fill="rgba(106, 17, 203, 0.1)"/></svg>');
-            background-size: cover;
-            z-index: -1;
-        }
-        
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hero-text {
-            z-index: 2;
-        }
-        
-        .hero-text h1 {
+        .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            background: linear-gradient(to right, #ffffff, #6dd5fa);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
         }
         
-        .hero-text p {
+        .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #d1d1e9;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
+        .cta-button {
             display: inline-block;
-            transition: all 0.3s;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
         }
         
-        .btn-primary {
-            background: var(--gradient2);
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 138, 0, 0.4);
-        }
-        
-        .btn-primary:hover {
+        .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 138, 0, 0.6);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid var(--accent2);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 138, 0, 0.1);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent2);
-            transform: translateY(-5px);
-        }
-        
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .coin-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-        
-        .coin {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 50px rgba(255, 138, 0, 0.3);
-            animation: rotate 20s linear infinite;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .coin::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: conic-gradient(
-                transparent, transparent, transparent, #ff8a00,
-                transparent, transparent, transparent, #ff3e78
-            );
-            animation: rotate 3s linear infinite;
-        }
-        
-        .coin-content {
-            position: absolute;
-            width: 95%;
-            height: 95%;
-            background: linear-gradient(145deg, #0f0c29, #1a0c40);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .coin-logo {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: #ff8a00;
-        }
-        
-        .coin h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #ff8a00, #da1b60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .coin p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-        
-        section {
-            padding: 6rem 5%;
+        .membership {
+            padding: 5rem 5%;
+            background: rgba(26, 26, 46, 0.4);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
+            margin-bottom: 3rem;
             font-size: 2.5rem;
-            display: inline-block;
-            background: linear-gradient(to right, #ff8a00, #ff3e78);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            left: 25%;
+            width: 50%;
             height: 4px;
-            background: var(--accent2);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
         
-        .roadmap {
-            background: rgba(15, 12, 41, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: var(--gradient2);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 30px;
-            background: rgba(25, 25, 50, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 138, 0, 0.2);
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 138, 0, 0.3);
-        }
-        
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--accent2);
-            top: 30px;
-            z-index: 1;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(255, 138, 0, 0.2);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            right: -50px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -50px;
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent2);
-        }
-        
-        .timeline-content ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .timeline-content ul li {
-            margin-bottom: 10px;
-            position: relative;
-        }
-        
-        .timeline-content ul li::before {
-            content: '•';
-            color: var(--accent2);
-            font-size: 1.5rem;
-            position: absolute;
-            left: -20px;
-            top: -5px;
-        }
-        
-        .reward-section {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .reward-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .levels {
+            display: flex;
+            justify-content: center;
             gap: 2rem;
-            align-items: center;
+            flex-wrap: wrap;
         }
         
-        .reward-calculator {
-            background: rgba(15, 15, 35, 0.7);
+        .level-card {
+            background: rgba(44, 62, 80, 0.7);
+            border-radius: 20px;
             padding: 2.5rem;
-            border-radius: 15px;
-        }
-        
-        .calculator-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent2);
-        }
-        
-        .calculator-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .form-group label {
-            font-weight: 600;
-        }
-        
-        .form-group input {
-            padding: 0.8rem 1rem;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus {
-            outline: 2px solid var(--accent2);
-        }
-        
-        .reward-result {
-            background: rgba(255, 138, 0, 0.2);
-            padding: 2rem;
-            border-radius: 15px;
+            width: 320px;
             text-align: center;
-            border: 1px solid rgba(255, 138, 0, 0.5);
-        }
-        
-        .reward-result h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent2);
-        }
-        
-        .reward-amount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #ff8a00, #da1b60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 1rem 0;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            min-width: 80px;
-        }
-        
-        .countdown-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent2);
-        }
-        
-        .countdown-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .tokenomics {
-            background: rgba(15, 12, 41, 0.7);
+            transition: all 0.4s ease;
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .tokenomics-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .chart-container {
-            background: rgba(25, 25, 50, 0.5);
-            padding: 2rem;
-            border-radius: 15px;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .token-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .token-item {
-            background: rgba(255, 138, 0, 0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--accent2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
         
-        .token-item::before {
+        .level-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .level-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: -1;
         }
         
-        .token-item:hover::before {
-            transform: translateX(100%);
-        }
+        .bronze { border-top: 5px solid #cd7f32; }
+        .silver { border-top: 5px solid #c0c0c0; }
+        .gold { border-top: 5px solid #ffd700; }
         
-        .token-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .token-item h3 i {
-            font-size: 1.2rem;
-        }
-        
-        .lock-badge {
-            background: rgba(255, 62, 120, 0.2);
-            color: var(--accent2);
-            padding: 0.2rem 0.5rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-        
-        /* NFT Section */
-        .nft-section {
-            background: linear-gradient(135deg, #1a0639, #2c0c5e);
-            border-radius: 20px;
-            padding: 4rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nft-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 Q50,100 100,0 L100,100 L0,100 Z" fill="rgba(255, 138, 0, 0.1)"/></svg>');
-            background-size: cover;
-            z-index: 0;
-        }
-        
-        .nft-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .nft-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(to right, #ff8a00, #ff3e78);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .coming-soon {
-            display: inline-block;
-            background: rgba(255, 138, 0, 0.2);
-            color: var(--accent2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            border: 2px solid var(--accent2);
-            animation: pulse 2s infinite;
-        }
-        
-        .nft-benefits {
-            background: rgba(25, 25, 50, 0.7);
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-            text-align: left;
-            border: 1px solid rgba(255, 138, 0, 0.3);
-        }
-        
-        .nft-benefits h3 {
-            font-size: 1.8rem;
+        .level-icon {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            color: var(--accent2);
-            text-align: center;
+        }
+        
+        .bronze .level-icon { color: #cd7f32; }
+        .silver .level-icon { color: #c0c0c0; }
+        .gold .level-icon { color: #ffd700; }
+        
+        .level-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .level-card p {
+            color: #d1d1e9;
+            margin-bottom: 1.5rem;
+            min-height: 120px;
+        }
+        
+        .benefits {
+            padding: 5rem 5%;
+            background: rgba(26, 26, 46, 0.6);
         }
         
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 138, 0, 0.2);
-            transition: all 0.3s;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(255, 138, 0, 0.2);
-            border-color: var(--accent2);
-        }
-        
-        .benefit-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent2);
-        }
-        
-        .benefit-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .highlight {
-            color: var(--accent2);
-            font-weight: bold;
-        }
-        
-        .nft-teaser {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .nft-box {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, #ff8a00, #ff3e78);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            opacity: 0.8;
-            transform: rotate(5deg);
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nft-box:nth-child(2) {
-            transform: rotate(-5deg);
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-        }
-        
-        .nft-box:nth-child(3) {
-            transform: rotate(3deg);
-            background: linear-gradient(135deg, #00ccff, #d400d4);
-        }
-        
-        .nft-box:hover {
-            opacity: 1;
-            transform: rotate(0) scale(1.1);
-        }
-        
-        footer {
-            background: rgba(10, 10, 35, 0.9);
-            padding: 4rem 5% 2rem;
-            margin-top: 4rem;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--accent2);
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 0.8rem;
+        .benefit-card {
+            background: rgba(44, 62, 80, 0.5);
+            border-radius: 15px;
+            padding: 2rem;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .footer-col ul li i {
-            color: var(--accent2);
-            min-width: 20px;
+        .benefit-card:hover {
+            background: rgba(44, 62, 80, 0.8);
+            transform: translateY(-5px);
         }
         
-        .footer-col ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            min-width: 50px;
         }
         
-        .footer-col ul li a:hover {
-            color: var(--accent2);
-            padding-right: 5px;
+        .benefit-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
         }
         
-        .social-links {
+        .partners {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .partners p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            color: #d1d1e9;
+        }
+        
+        .partner-logos {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
         }
         
-        .social-links a {
+        .partner-logo {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            transition: all 0.3s ease;
         }
         
-        .social-links a:hover {
-            background: var(--accent2);
-            transform: translateY(-3px);
+        .partner-logo:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .promise {
+            padding: 5rem 5%;
+            background: rgba(26, 26, 46, 0.4);
+        }
+        
+        .promise-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .promise-text {
+            flex: 1;
+        }
+        
+        .promise-image {
+            flex: 1;
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 30px rgba(106, 69, 209, 0.3);
+        }
+        
+        footer {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 138, 0, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(255, 138, 0, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 138, 0, 0);
-            }
-        }
-        
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @media (max-width: 1100px) {
-            .hero-content, 
-            .reward-container,
-            .tokenomics-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: 15px;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            color: #a0a0c0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-links {
+                display: none;
             }
             
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero-text h1 {
+            .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero-buttons {
+            .levels {
                 flex-direction: column;
+                align-items: center;
             }
             
-            .coin-container {
-                width: 300px;
-                height: 300px;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .nft-section {
-                padding: 2rem;
+            .promise-content {
+                flex-direction: column;
             }
         }
     </style>
@@ -943,436 +401,195 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="nav-container">
+        <nav>
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <div class="logo-text">LABOBO</div>
+                <i class="fas fa-dragon"></i>
+                <span>ثورة لابوبو</span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                    <li><a href="#reward">Rewards</a></li>
-                    <li><a href="#tokenomics">Tokenomics</a></li>
-                    <li><a href="#nft">NFT Benefits</a></li>
-                </ul>
-            </nav>
-        </div>
+            <div class="nav-links">
+                <a href="#membership">العضوية</a>
+                <a href="#benefits">المميزات</a>
+                <a href="#partners">الشركاء</a>
+                <a href="#promise">الضمان</a>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Invest in the Future with LABOBO Coin</h1>
-                <p>Join the cryptocurrency revolution and benefit from our unique reward system that gives you 150% bonus for holding tokens for 3-6 months. The future of finance is in your hands!</p>
-                
-                <div class="social-icons">
-                    <a href="https://x.com/CoinLabobo?t=jpy3acLrIYos8JVwvXypzQ&s=09" target="_blank" title="Follow us on X">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="https://t.me/LABOBO567" target="_blank" title="Join Telegram">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="#reward" class="btn btn-primary">Calculate Your Rewards</a>
-                    <a href="#nft" class="btn btn-secondary">Discover NFT Benefits</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="coin-container">
-                    <div class="coin">
-                        <div class="coin-content">
-                            <div class="coin-logo">
-                                <i class="fas fa-coins"></i>
-                            </div>
-                            <h2>LABOBO</h2>
-                            <p>The Future of Solana Meme Coins</p>
-                            <p class="reward-amount">+150% Holding Bonus</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="hero">
+        <h1>🌟 انضم لثورة لابوبو - أول عضوية NFT تمنحك مميزات حقيقية! 🧸</h1>
+        <p>اكتشف عالمًا جديدًا حيث تلتقي الرقمية بالواقعية. مع عضوية لابوبو، تحصل على امتيازات حصرية في العالمين الرقمي والواقعي، وتصبح جزءًا من مجتمع ثوري!</p>
+        <a href="#membership" class="cta-button">اكتشف العضوية الآن</a>
     </section>
 
-    <!-- Roadmap Section -->
-    <section id="roadmap">
-        <div class="section-title">
-            <h2>Project Roadmap</h2>
-        </div>
-        <div class="roadmap">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Phase 1: Launch</h3>
-                        <ul>
-                            <li>Token launch on Solana network</li>
-                            <li>Development of interactive website with wallet integration</li>
-                            <li>Presale event (500,000 tokens only)</li>
-                            <li>Liquidity added to Raydium</li>
-                            <li>First marketing campaign launch</li>
-                        </ul>
-                    </div>
+    <!-- Membership Levels -->
+    <section id="membership" class="membership">
+        <h2 class="section-title">مستويات العضوية</h2>
+        <div class="levels">
+            <div class="level-card bronze">
+                <div class="level-icon">
+                    <i class="fas fa-medal"></i>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Phase 2: Expansion</h3>
-                        <ul>
-                            <li>Implementation of token holding rewards system</li>
-                            <li>Airdrop campaigns with interactive tasks</li>
-                            <li>Integration with additional DEX platforms</li>
-                            <li>Development of mobile wallet tracking app</li>
-                            <li>Affiliate marketing program launch</li>
-                            <li><strong>Coming Soon:</strong> Exclusive NFT collection launch</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Phase 3: Development</h3>
-                        <ul>
-                            <li>Token staking system implementation</li>
-                            <li>Development of internal trading platform</li>
-                            <li>Launch of LABOBO NFT marketplace</li>
-                            <li>Integration with other Solana projects</li>
-                            <li>Centralized exchange listings</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Phase 4: Leadership</h3>
-                        <ul>
-                            <li>Implementation of community governance system</li>
-                            <li>Launch of Play-to-Earn gaming platform</li>
-                            <li>Expansion to additional blockchain networks</li>
-                            <li>Building a strong global community</li>
-                            <li>Positioning LABOBO as a leading meme coin</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reward Section -->
-    <section class="reward-section" id="reward">
-        <div class="section-title">
-            <h2>Holding Rewards System</h2>
-        </div>
-        <div class="reward-container">
-            <div class="reward-calculator">
-                <h3 class="calculator-title">Calculate Your Rewards</h3>
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="tokens">Number of LABOBO tokens you hold:</label>
-                        <input type="number" id="tokens" min="0" value="10000">
-                    </div>
-                    <div class="form-group">
-                        <label for="duration">Holding period (months):</label>
-                        <input type="range" id="duration" min="1" max="6" value="3">
-                        <div id="duration-value">3 months</div>
-                    </div>
-                    <button class="btn btn-primary" id="calculate-btn">Calculate Rewards</button>
-                </div>
-            </div>
-            <div class="reward-result">
-                <h3>Reward Calculation</h3>
-                <p>You've held your tokens for <span id="result-months">3</span> months</p>
-                <p>Token amount: <span id="result-tokens">10,000</span> LABOBO</p>
-                <div class="reward-amount">+<span id="result-reward">15,000</span> LABOBO</div>
-                <p>Bonus: 150% of your balance</p>
-                
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="days">90</div>
-                        <div class="countdown-label">Days</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="hours">00</div>
-                        <div class="countdown-label">Hours</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="minutes">00</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-value" id="seconds">00</div>
-                        <div class="countdown-label">Seconds</div>
-                    </div>
-                </div>
-                <p>Until full reward eligibility</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics Section -->
-    <section id="tokenomics">
-        <div class="section-title">
-            <h2>Token Distribution</h2>
-        </div>
-        <div class="tokenomics">
-            <div class="tokenomics-container">
-                <div class="chart-container">
-                    <canvas id="tokenomics-chart"></canvas>
-                </div>
-                <div class="token-details">
-                    <div class="token-item">
-                        <h3><i class="fas fa-lock"></i> Locked for 2 Years <span class="lock-badge">35%</span></h3>
-                        <p>35% of total supply (350 million tokens)</p>
-                        <p>Gradual release after lock period</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-gift"></i> Airdrops with Tasks <span class="lock-badge">25%</span></h3>
-                        <p>25% of total supply (250 million tokens)</p>
-                        <p>Community distributions with interactive tasks</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-fire"></i> Periodic Burn <span class="lock-badge">5%</span></h3>
-                        <p>5% of total supply (50 million tokens)</p>
-                        <p>Regular token burns to increase scarcity</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-coins"></i> Liquidity <span class="lock-badge">15%</span></h3>
-                        <p>15% of total supply (150 million tokens)</p>
-                        <p>Locked for 1 year on Raydium</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-bullhorn"></i> Marketing <span class="lock-badge">15%</span></h3>
-                        <p>15% of total supply (150 million tokens)</p>
-                        <p>Dedicated to marketing campaigns and development</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-users"></i> Team <span class="lock-badge">10%</span></h3>
-                        <p>10% of total supply (100 million tokens)</p>
-                        <p>Locked for 3 years with gradual release</p>
-                    </div>
-                    <div class="token-item">
-                        <h3><i class="fas fa-shopping-cart"></i> Presale <span class="lock-badge">500K Only</span></h3>
-                        <p>Only 500,000 tokens for presale</p>
-                        <p>Limited opportunity for early investment</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NFT Section -->
-    <section id="nft" class="nft-section">
-        <div class="nft-content">
-            <h2 class="nft-title">Exclusive NFT Benefits</h2>
-            <div class="coming-soon">Details Coming Soon</div>
-            
-            <div class="nft-benefits">
-                <h3>NFT HOLDER BENEFITS</h3>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <h4>Staking Multipliers</h4>
-                        <p>NFT holders will receive up to 3X staking rewards on their LABOBO tokens, significantly boosting passive income potential.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <h4>Governance Power</h4>
-                        <p>Each NFT grants voting rights on project decisions, treasury allocations, and future developments - true decentralized governance.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <h4>Exclusive Airdrops</h4>
-                        <p>Priority access to all future token airdrops, partner project giveaways, and special edition NFTs before public release.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <h4>Premium Access</h4>
-                        <p>Unlock premium features in upcoming LABOBO products, early beta testing opportunities, and VIP community channels.</p>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem; background: rgba(255,138,0,0.1); padding: 1.5rem; border-radius: 10px; border-left: 3px solid var(--accent2);">
-                    <h4 style="color: var(--accent2); margin-bottom: 1rem;">Why Hold LABOBO NFTs?</h4>
-                    <p>Our NFT collection will be <span class="highlight">limited edition</span> with only 10,000 unique pieces ever minted. The rarest NFTs will unlock special privileges that money can't buy. This is not just an investment - it's your membership to the future of decentralized finance.</p>
-                    <p class="highlight" style="margin-top: 1rem; font-size: 1.2rem;">Hold, don't sell! The real value will be revealed as our ecosystem grows.</p>
-                </div>
+                <h3>العضوية البرونزية</h3>
+                <p>احصل على خصم 10% في متاجر ألعاب عالمية بالإضافة إلى دمية لابوبو حصرية هدية لك مع كل عضوية.</p>
+                <a href="#" class="cta-button">انضم الآن</a>
             </div>
             
-            <div class="nft-teaser">
-                <div class="nft-box">
+            <div class="level-card silver">
+                <div class="level-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>العضوية الفضية</h3>
+                <p>استبدل عملاتك لابوبو للحصول على خصم 50% في أفضل المطاعم والمنتجعات الترفيهية. نحرق 20% من العملات لزيادة قيمتها.</p>
+                <a href="#" class="cta-button">ترقية الآن</a>
+            </div>
+            
+            <div class="level-card gold">
+                <div class="level-icon">
                     <i class="fas fa-crown"></i>
                 </div>
-                <div class="nft-box">
-                    <i class="fas fa-gem"></i>
+                <h3>العضوية الذهبية</h3>
+                <p>حصري لأوائل الداعمين! خدمات مجانية في جميع المتاجر والمنتجعات الشريكة بالإضافة إلى حصة في أرباح المشروع.</p>
+                <a href="#" class="cta-button">احصل على الحصرية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <h2 class="section-title">مميزات لا مثيل لها</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-gift"></i>
                 </div>
-                <div class="nft-box">
-                    <i class="fas fa-key"></i>
+                <div class="benefit-content">
+                    <h4>دمية لابوبو حصرية</h4>
+                    <p>مع كل عضوية تحصل على دمية لابوبو حصرية تُشحن لباب منزلك، بالإضافة إلى نسخة رقمية (NFT) في محفظتك.</p>
                 </div>
             </div>
             
-            <div style="margin-top: 2rem; text-align: center;">
-                <p><strong>Stay tuned for our big reveal!</strong> We'll announce minting dates, rarity traits, and full utility details very soon. Follow our social channels to be the first to know.</p>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="benefit-content">
+                    <h4>حرق العملات</h4>
+                    <p>عند الترقية للعضوية الفضية، نحرق 20% من العملات المستخدمة لزيادة ندرة العملة وتعزيز قيمتها لجميع الحاملين.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="benefit-content">
+                    <h4>أرباح مستمرة</h4>
+                    <p>حملة العضوية الذهبية يحصلون على أرباح مستمرة من مبيعات الـ NFT ومن عمليات الاستبدال في النظام البيئي.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="benefit-content">
+                    <h4>دخول فعاليات حصرية</h4>
+                    <p>تمتع بدخول حصري إلى فعاليات خاصة، معارض، وأحداث مجتمعية في العالمين الرقمي والواقعي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <h2 class="section-title">شركاؤنا</h2>
+        <p>نعمل مع شبكة من المتاجر والمطاعم والمنتجعات الترفيهية الرائدة التي ستُعلن عنها قريبًا. توقع شراكات استراتيجية مع أسماء معروفة عالميًا في قطاعات الترفيه والتجارة والضيافة.</p>
+        
+        <div class="partner-logos">
+            <div class="partner-logo">متاجر ألعاب</div>
+            <div class="partner-logo">مطاعم فاخرة</div>
+            <div class="partner-logo">منتجعات ترفيه</div>
+            <div class="partner-logo">علامات تجارية</div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section id="promise" class="promise">
+        <h2 class="section-title">ضماناتنا</h2>
+        <div class="promise-content">
+            <div class="promise-text">
+                <h3>شفافية تامة وثقة كاملة</h3>
+                <p>نلتزم بأعلى معايير الشفافية في كل ما نقدمه:</p>
+                <ul style="padding: 1.5rem; line-height: 2;">
+                    <li>جميع عقود الشراكة ستُنشر على GitHub للتحقق العام</li>
+                    <li>سنقدم فيديوهات عملية تثبت صحة الخصومات والامتيازات</li>
+                    <li>نظام حوكمة مجتمعي يسمح لأعضاء الذهبية بالمشاركة في القرارات</li>
+                    <li>مراجعة دورية من جهات خارجية لضمان الالتزام بالوعود</li>
+                </ul>
+            </div>
+            <div class="promise-image">
+                <i class="fas fa-lock"></i>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>About LABOBO</h3>
-                <p>LABOBO is a cryptocurrency built on the Solana network aiming to create a strong and sustainable community with a unique reward system that encourages long-term investment.</p>
-                <div class="social-links">
-                    <a href="https://x.com/CoinLabobo?t=jpy3acLrIYos8JVwvXypzQ&s=09" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://t.me/LABOBO567" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-medium"></i></a>
-                </div>
+        <div class="footer-content">
+            <h3>كن جزءًا من الثورة!</h3>
+            <p>أول 100 مشترك في القائمة البريدية يحصلون على عضوية برونزية مجانية عند الإطلاق</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                    <li><a href="#reward">Rewards</a></li>
-                    <li><a href="#tokenomics">Tokenomics</a></li>
-                    <li><a href="#nft">NFT Benefits</a></li>
-                </ul>
+            
+            <a href="#" class="cta-button">انضم للقائمة البريدية</a>
+            
+            <div class="copyright">
+                &copy; 2025 ثورة لابوبو. جميع الحقوق محفوظة.
             </div>
-            <div class="footer-col">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Whitepaper</a></li>
-                    <li><a href="#">Security Audit</a></li>
-                    <li><a href="#">Token Contract</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fab fa-x-twitter"></i> <a href="https://x.com/CoinLabobo?t=jpy3acLrIYos8JVwvXypzQ&s=09" target="_blank">CoinLabobo</a></li>
-                    <li><i class="fab fa-telegram"></i> <a href="https://t.me/LABOBO567" target="_blank">LABOBO567</a></li>
-                    <li><i class="fas fa-envelope"></i> info@labobo.io</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>© 2023 LABOBO Coin. All rights reserved. Cryptocurrencies are high-risk investments, invest only what you can afford to lose.</p>
         </div>
     </footer>
 
     <script>
-        // Initialize tokenomics chart
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('tokenomics-chart').getContext('2d');
-            const tokenomicsChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: [
-                        'Locked for 2 Years (35%)', 
-                        'Airdrops with Tasks (25%)', 
-                        'Periodic Burn (5%)', 
-                        'Liquidity (15%)', 
-                        'Marketing (15%)', 
-                        'Team (10%)'
-                    ],
-                    datasets: [{
-                        data: [35, 25, 5, 15, 15, 5],
-                        backgroundColor: [
-                            '#6a11cb',
-                            '#2575fc',
-                            '#ff3e78',
-                            '#00ccff',
-                            '#ff8a00',
-                            '#8e44ad'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                font: {
-                                    family: "'Montserrat', sans-serif",
-                                    size: 14
-                                },
-                                color: '#ffffff',
-                                padding: 20
-                            }
-                        }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
                     }
-                }
-            });
-
-            // Reward calculator functionality
-            const tokensInput = document.getElementById('tokens');
-            const durationInput = document.getElementById('duration');
-            const durationValue = document.getElementById('duration-value');
-            const calculateBtn = document.getElementById('calculate-btn');
-            const resultMonths = document.getElementById('result-months');
-            const resultTokens = document.getElementById('result-tokens');
-            const resultReward = document.getElementById('result-reward');
-            
-            // Update duration display
-            durationInput.addEventListener('input', function() {
-                durationValue.textContent = this.value + ' months';
+                });
+            }, {
+                threshold: 0.1
             });
             
-            // Calculate reward
-            calculateBtn.addEventListener('click', function() {
-                const tokens = parseInt(tokensInput.value) || 0;
-                const duration = parseInt(durationInput.value);
-                
-                resultMonths.textContent = duration;
-                resultTokens.textContent = tokens.toLocaleString();
-                
-                // Calculate reward based on duration
-                let rewardPercentage = 0;
-                if (duration === 3) rewardPercentage = 1.5; // 150% for 3 months
-                else if (duration === 4) rewardPercentage = 1.75; // 175% for 4 months
-                else if (duration === 5) rewardPercentage = 2.0; // 200% for 5 months
-                else if (duration === 6) rewardPercentage = 2.5; // 250% for 6 months
-                else rewardPercentage = 0; // No reward for less than 3 months
-                
-                const reward = Math.floor(tokens * rewardPercentage);
-                resultReward.textContent = reward.toLocaleString();
+            document.querySelectorAll('.level-card, .benefit-card').forEach(card => {
+                observer.observe(card);
             });
-            
-            // Initial calculation
-            calculateBtn.click();
-            
-            // Countdown timer
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            
-            // Set the target date (90 days from now)
-            const targetDate = new Date();
-            targetDate.setDate(targetDate.getDate() + 90);
-            
-            function updateCountdown() {
-                const now = new Date();
-                const diff = targetDate - now;
-                
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
-                daysEl.textContent = days;
-                hoursEl.textContent = hours.toString().padStart(2, '0');
-                minutesEl.textContent = minutes.toString().padStart(2, '0');
-                secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-            
-            // Update countdown every second
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
         });
     </script>
 </body>
