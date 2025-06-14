@@ -6,7 +6,6 @@
     <title>Labobo - NFT Membership with Real-World Benefits</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -21,10 +20,6 @@
             --dark: #0f0c29;
             --accent: #ff3e78;
             --light: #f8f9fa;
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --gradient: linear-gradient(45deg, var(--primary), var(--secondary));
-            --gradient2: linear-gradient(45deg, var(--accent), #ff8a00);
         }
         
         body {
@@ -63,13 +58,18 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient2);
+            background: linear-gradient(45deg, #ff8a00, #da1b60);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             animation: pulse 2s infinite;
+        }
+        
+        .logo-icon img {
+            width: 30px;
+            height: 30px;
         }
         
         .logo-text {
@@ -123,35 +123,18 @@
             padding: 0 5%;
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,100 0,100" fill="rgba(106, 17, 203, 0.1)"/></svg>');
-            background-size: cover;
-            z-index: -1;
+            text-align: center;
         }
         
         .hero-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hero-text {
+            position: relative;
             z-index: 2;
         }
         
-        .hero-text h1 {
-            font-size: 3.5rem;
+        .hero h1 {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             background: linear-gradient(to right, #ffffff, #6dd5fa);
@@ -160,11 +143,11 @@
             font-family: 'Montserrat', sans-serif;
         }
         
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
             opacity: 0.9;
-            max-width: 600px;
         }
         
         .highlight {
@@ -172,211 +155,11 @@
             font-weight: bold;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-        
-        .btn-primary {
-            background: var(--gradient2);
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 138, 0, 0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 138, 0, 0.6);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid var(--accent);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 62, 120, 0.1);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
-        }
-        
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .coin-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-        
-        .coin {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #1a1a2e, #16213e);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 50px rgba(255, 138, 0, 0.3);
-            animation: rotate 20s linear infinite;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .coin::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: conic-gradient(
-                transparent, transparent, transparent, #ff8a00,
-                transparent, transparent, transparent, #ff3e78
-            );
-            animation: rotate 3s linear infinite;
-        }
-        
-        .coin-content {
-            position: absolute;
-            width: 95%;
-            height: 95%;
-            background: linear-gradient(145deg, #0f0c29, #1a0c40);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .coin-logo {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: #ff8a00;
-        }
-        
-        .coin h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #ff8a00, #da1b60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .coin p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-        
-        section {
-            padding: 6rem 5%;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            background: linear-gradient(to right, #ff8a00, #ff3e78);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-        
-        /* New Membership Section */
-        .membership-section {
-            background: linear-gradient(135deg, #1a0639, #2c0c5e);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .membership-content {
-            padding: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .membership-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .membership-header h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #ff8a00, #ff3e78);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .membership-header p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
         .membership-tiers {
             display: flex;
             justify-content: center;
             gap: 2rem;
+            margin-top: 4rem;
             flex-wrap: wrap;
         }
         
@@ -384,13 +167,12 @@
             background: rgba(25, 25, 50, 0.7);
             border-radius: 20px;
             padding: 2.5rem;
-            width: 350px;
+            width: 320px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 2px solid transparent;
         }
         
         .tier-card::before {
@@ -402,29 +184,9 @@
             height: 5px;
         }
         
-        .bronze {
-            border-color: var(--bronze);
-        }
-        
-        .bronze::before {
-            background: var(--bronze);
-        }
-        
-        .silver {
-            border-color: var(--silver);
-        }
-        
-        .silver::before {
-            background: var(--silver);
-        }
-        
-        .gold {
-            border-color: var(--gold);
-        }
-        
-        .gold::before {
-            background: var(--gold);
-        }
+        .bronze::before { background: var(--bronze); }
+        .silver::before { background: var(--silver); }
+        .gold::before { background: var(--gold); }
         
         .tier-card:hover {
             transform: translateY(-10px);
@@ -436,17 +198,9 @@
             margin-bottom: 1rem;
         }
         
-        .bronze .tier-icon {
-            color: var(--bronze);
-        }
-        
-        .silver .tier-icon {
-            color: var(--silver);
-        }
-        
-        .gold .tier-icon {
-            color: var(--gold);
-        }
+        .bronze .tier-icon { color: var(--bronze); }
+        .silver .tier-icon { color: var(--silver); }
+        .gold .tier-icon { color: var(--gold); }
         
         .tier-card h3 {
             font-size: 2rem;
@@ -480,14 +234,56 @@
             font-weight: bold;
         }
         
-        .perks-section {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            border-radius: 20px;
-            overflow: hidden;
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            background: linear-gradient(45deg, #ff8a00, #da1b60);
+            color: white;
         }
         
-        .perks-content {
-            padding: 4rem;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 138, 0, 0.6);
+        }
+        
+        .perks-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #1a0639, #2c0c5e);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: linear-gradient(to right, #ff8a00, #ff3e78);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
         
         .perks-grid {
@@ -527,8 +323,6 @@
         .partners-section {
             padding: 6rem 5%;
             text-align: center;
-            background: rgba(15, 12, 41, 0.7);
-            border-radius: 20px;
         }
         
         .partners-logos {
@@ -560,9 +354,8 @@
         
         .promise-section {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, #1a0c40, #0f0c29);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             text-align: center;
-            border-radius: 20px;
         }
         
         .promise-grid {
@@ -609,81 +402,36 @@
             background: rgba(10, 10, 35, 0.9);
             padding: 4rem 5% 2rem;
             text-align: center;
-            margin-top: 4rem;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--accent);
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-col ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            padding-right: 5px;
         }
         
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
             justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
+            font-size: 1.5rem;
             transition: all 0.3s;
         }
         
         .social-links a:hover {
             background: var(--accent);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 2rem;
             margin-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
         }
@@ -700,60 +448,24 @@
             }
         }
         
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @media (max-width: 1100px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-text {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .tier-card {
+                width: 100%;
+                max-width: 400px;
             }
             
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .tier-card {
-                width: 100%;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .membership-content, .perks-content {
-                padding: 2rem;
+                gap: 1rem;
             }
         }
     </style>
@@ -770,62 +482,20 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#membership">Membership</a></li>
                     <li><a href="#perks">Perks</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#promise">Our Promise</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Join the Labobo Revolution</h1>
-                <p>The world's first NFT membership that gives you <span class="highlight">real-world benefits!</span> Experience the future of digital assets with tangible perks.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#membership" class="btn btn-primary">Explore Memberships</a>
-                    <a href="#tokenomics" class="btn btn-secondary">View Tokenomics</a>
-                </div>
-                
-                <div class="social-icons">
-                    <a href="https://x.com/CoinLabobo?t=jpy3acLrIYos8JVwvXypzQ&s=09" target="_blank" title="Follow us on X">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="https://t.me/LABOBO567" target="_blank" title="Join Telegram">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="coin-container">
-                    <div class="coin">
-                        <div class="coin-content">
-                            <div class="coin-logo">
-                                <i class="fas fa-bear"></i>
-                            </div>
-                            <h2>LABOBO</h2>
-                            <p>NFT Membership with Real Benefits</p>
-                            <p class="highlight">Choose Your Level</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Membership Section -->
-    <section id="membership" class="membership-section">
-        <div class="membership-content">
-            <div class="membership-header">
-                <h2>Labobo NFT Membership Tiers</h2>
-                <p>World's first NFT membership with real-world benefits. Choose your level and unlock exclusive perks.</p>
-            </div>
+            <h1>Join the Labobo Revolution</h1>
+            <p>The world's first NFT membership that gives you <span class="highlight">real-world benefits!</span></p>
             
             <div class="membership-tiers">
                 <div class="tier-card bronze">
@@ -839,9 +509,8 @@
                         <li>Access to exclusive Labobo community</li>
                         <li>Early access to new collections</li>
                         <li>Limited edition Labobo plush toy</li>
-                        <li>Basic voting rights in community decisions</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Bronze</a>
+                    <a href="#" class="btn">Get Bronze</a>
                 </div>
                 
                 <div class="tier-card silver">
@@ -856,9 +525,8 @@
                         <li>VIP event access</li>
                         <li>20% token burn to increase value</li>
                         <li>Premium Labobo plush toy</li>
-                        <li>Enhanced voting rights</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Silver</a>
+                    <a href="#" class="btn">Get Silver</a>
                 </div>
                 
                 <div class="tier-card gold">
@@ -869,14 +537,13 @@
                     <h4>Exclusive Benefits</h4>
                     <ul>
                         <li>Free services at partner locations</li>
-                        <li>Share in project profits (5% revenue share)</li>
+                        <li>Share in project profits</li>
                         <li>All Silver benefits</li>
                         <li>Passive income from NFT sales</li>
                         <li>Limited edition Gold Labobo plush</li>
                         <li>Personal concierge service</li>
-                        <li>Governance voting power</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Gold</a>
+                    <a href="#" class="btn">Get Gold</a>
                 </div>
             </div>
         </div>
@@ -884,43 +551,41 @@
 
     <!-- Perks Section -->
     <section id="perks" class="perks-section">
-        <div class="perks-content">
-            <div class="section-title">
-                <h2>Unmatched Membership Perks</h2>
+        <div class="section-title">
+            <h2>Unmatched Membership Perks</h2>
+        </div>
+        
+        <div class="perks-grid">
+            <div class="perk-card">
+                <div class="perk-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Limited Edition Plush Toy</h3>
+                <p>Every member receives an exclusive Labobo plush toy - a collectible item that grows in value.</p>
             </div>
             
-            <div class="perks-grid">
-                <div class="perk-card">
-                    <div class="perk-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>Limited Edition Plush Toy</h3>
-                    <p>Every member receives an exclusive Labobo plush toy - a collectible item that grows in value.</p>
+            <div class="perk-card">
+                <div class="perk-icon">
+                    <i class="fas fa-fire"></i>
                 </div>
-                
-                <div class="perk-card">
-                    <div class="perk-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Token Burn Mechanism</h3>
-                    <p>When Silver members upgrade, we burn 20% of tokens to increase scarcity and value for all holders.</p>
+                <h3>Token Burn Mechanism</h3>
+                <p>When Silver members upgrade, we burn 20% of tokens to increase scarcity and value for all holders.</p>
+            </div>
+            
+            <div class="perk-card">
+                <div class="perk-icon">
+                    <i class="fas fa-coins"></i>
                 </div>
-                
-                <div class="perk-card">
-                    <div class="perk-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Passive Income</h3>
-                    <p>Gold members earn a share of profits from all NFT sales, creating a sustainable income stream.</p>
+                <h3>Passive Income</h3>
+                <p>Gold members earn a share of profits from all NFT sales, creating a sustainable income stream.</p>
+            </div>
+            
+            <div class="perk-card">
+                <div class="perk-icon">
+                    <i class="fas fa-utensils"></i>
                 </div>
-                
-                <div class="perk-card">
-                    <div class="perk-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Real-World Benefits</h3>
-                    <p>Enjoy substantial discounts and free services at our global network of partner establishments.</p>
-                </div>
+                <h3>Real-World Benefits</h3>
+                <p>Enjoy substantial discounts and free services at our global network of partner establishments.</p>
             </div>
         </div>
     </section>
@@ -973,53 +638,29 @@
         <div class="cta-box">
             <h2>Labobo is Not Just a Meme</h2>
             <p>It's a full experience merging fun, utility, and innovation in the Web3 space. Join the revolution today!</p>
-            <a href="#membership" class="btn btn-primary" style="margin-top: 2rem;">Join Labobo Revolution</a>
+            <a href="#" class="btn" style="margin-top: 2rem;">Join Labobo Revolution</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>About Labobo</h3>
-                <p>Labobo is revolutionizing NFTs by providing real-world benefits through our tiered membership system.</p>
-                <div class="social-links">
-                    <a href="https://x.com/CoinLabobo?t=jpy3acLrIYos8JVwvXypzQ&s=09" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://t.me/LABOBO567" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-bear"></i>
             </div>
-            <div class="footer-col">
-                <h3>Membership</h3>
-                <ul>
-                    <li><a href="#">Bronze Membership</a></li>
-                    <li><a href="#">Silver Membership</a></li>
-                    <li><a href="#">Gold Membership</a></li>
-                    <li><a href="#">Compare Tiers</a></li>
-                    <li><a href="#">How to Join</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Whitepaper</a></li>
-                    <li><a href="#">Smart Contracts</a></li>
-                    <li><a href="#">Tokenomics</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Roadmap</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#">Support Center</a></li>
-                    <li><a href="#">Partnership Inquiries</a></li>
-                    <li><a href="#">Business Development</a></li>
-                    <li><a href="#">Press Kit</a></li>
-                </ul>
-            </div>
+            <div class="logo-text">Labobo</div>
         </div>
+        
+        <p>The world's first NFT membership with real-world benefits</p>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        
         <div class="copyright">
             <p>© 2023 Labobo. All rights reserved. Labobo is not just a meme - it's a full experience merging fun, utility, and innovation.</p>
         </div>
