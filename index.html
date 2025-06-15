@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labobo - Coming Soon</title>
+    <title>Labobo - Innovative Crypto Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #0c1225 0%, #0d1a3a 50%, #0a1129 100%);
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -121,6 +124,8 @@
             color: transparent;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             animation: glow 2s infinite alternate;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
         }
         
         @keyframes glow {
@@ -137,6 +142,8 @@
             letter-spacing: 3px;
             position: relative;
             display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px rgba(143, 148, 251, 0.8);
         }
         
         .coming-soon::after {
@@ -255,16 +262,16 @@
         .notification {
             margin-top: 30px;
             padding: 15px 25px;
-            background: rgba(233, 69, 96, 0.15);
+            background: rgba(25, 50, 80, 0.5);
             border-radius: 12px;
-            border: 1px solid #e94560;
+            border: 1px solid #4e54c8;
             max-width: 700px;
             width: 100%;
         }
         
         .notification p {
             font-size: 1.1rem;
-            color: #ffb8c6;
+            color: #c5c8ff;
             line-height: 1.6;
         }
         
@@ -292,6 +299,7 @@
             max-width: 500px;
             margin: 20px 0;
             border: 2px solid #4e54c8;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
         
         .subscribe h3 {
@@ -320,6 +328,7 @@
             color: white;
             font-size: 1rem;
             border: 1px solid #4e54c8;
+            transition: all 0.3s;
         }
         
         input::placeholder {
@@ -330,6 +339,7 @@
             outline: none;
             border-color: #e94560;
             background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
         }
         
         button {
@@ -349,6 +359,70 @@
             box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
         }
         
+        .roadmap {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px 0;
+            padding: 20px;
+        }
+        
+        .roadmap h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #f8f9fa;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #e94560, #8f94fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, #4e54c8, #e94560);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: rgba(25, 25, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid #4e54c8;
+        }
+        
+        .timeline-content h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        
         @media (max-width: 768px) {
             .logo-container { width: 120px; height: 120px; }
             .logo i { font-size: 50px; }
@@ -357,6 +431,20 @@
             .subtitle { font-size: 1.2rem; }
             .feature-card { max-width: 100%; }
             .social-link { width: 50px; height: 50px; font-size: 22px; }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
         }
         
         @media (max-width: 480px) {
@@ -382,14 +470,16 @@
                 </div>
             </div>
             
-            <h1>Labobo Project</h1>
-            <p class="subtitle">A revolutionary cryptocurrency project with unique features and rewards</p>
+            <h1>Labobo Crypto Project</h1>
+            <p class="subtitle">
+                A revolutionary cryptocurrency with innovative reward systems and real-world utility
+            </p>
         </header>
         
         <div class="coming-soon">Coming Soon</div>
         
         <p class="subtitle">
-            We're working hard to launch our innovative project. Join our community for exclusive updates and early access.
+            We're building the future of digital currency. Join our community for exclusive updates and early access.
         </p>
         
         <div class="subscribe">
@@ -450,29 +540,55 @@
                 </div>
                 <h3 class="feature-title">Exclusive Rewards</h3>
                 <p class="feature-desc">
-                    Unique reward system for token holders with discounts and valuable gifts
+                    Unique reward system for token holders with discounts and valuable benefits
                 </p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-handshake"></i>
+                    <i class="fas fa-store"></i>
                 </div>
-                <h3 class="feature-title">Strategic Partnerships</h3>
+                <h3 class="feature-title">Real Partnerships</h3>
                 <p class="feature-desc">
-                    Wide network of partnerships with major stores and service providers
+                    Strategic alliances with restaurants, shops, and entertainment venues
                 </p>
+            </div>
+        </div>
+        
+        <div class="roadmap">
+            <h2>Project Roadmap</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 1: Foundation</h3>
+                        <p>Token creation and initial community building</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 2: Expansion</h3>
+                        <p>Partnership development and wallet integration</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 3: Real-World Use</h3>
+                        <p>Implementation in partner stores and services</p>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="notification">
             <p>
-                <strong>Important Notice:</strong> Labobo project is currently under development. All mentioned details are subject to change. There are no investment or financial promises according to financial market regulations.
+                <strong>Transparency Notice:</strong> Labobo is an innovative cryptocurrency project currently in development. 
+                We're committed to building a transparent and community-driven ecosystem. 
+                As with all blockchain projects, participants should understand the technology and market dynamics.
             </p>
         </div>
         
         <footer>
-            © 2025 Labobo Project. All rights reserved. This project is not licensed by financial authorities and should be approached with caution.
+            © 2025 Labobo Project. All rights reserved. Labobo is a community-driven cryptocurrency initiative.
         </footer>
     </div>
 
