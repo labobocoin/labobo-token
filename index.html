@@ -470,9 +470,9 @@
                 </div>
             </div>
             
-            <h1>Labobo Crypto Project</h1>
+            <h1>LABOBO Meme Coin Project</h1>
             <p class="subtitle">
-                A revolutionary cryptocurrency with innovative reward systems and real-world utility
+                A revolutionary meme coin with innovative reward systems and real-world utility
             </p>
         </header>
         
@@ -554,6 +554,30 @@
                 </p>
             </div>
         </div>
+
+        <!-- NFT Section -->
+        <div class="nft-section">
+            <h2>LABOBO NFTs: Unlock Exclusive Benefits</h2>
+            <p class="subtitle">Hold one of our limited edition NFTs to gain access to special discounts and perks from our future partners.</p>
+            <div class="nft-tiers">
+                <div class="nft-card bronze">
+                    <div class="nft-icon"><i class="fas fa-medal"></i></div>
+                    <h3 class="nft-title">Bronze Tier NFT</h3>
+                    <p class="nft-desc">Entry-level access to partner discounts (e.g., 5% off at selected restaurants).</p>
+                </div>
+                <div class="nft-card silver">
+                    <div class="nft-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 class="nft-title">Silver Tier NFT</h3>
+                    <p class="nft-desc">Enhanced discounts and early access to new partnerships (e.g., 10% off at selected restaurants and shops).</p>
+                </div>
+                <div class="nft-card gold">
+                    <div class="nft-icon"><i class="fas fa-crown"></i></div>
+                    <h3 class="nft-title">Gold Tier NFT</h3>
+                    <p class="nft-desc">Premium benefits, highest discounts, and exclusive event invitations (e.g., 15% off at all partner venues and VIP access).</p>
+                </div>
+            </div>
+        </div>
+        <!-- End NFT Section -->
         
         <div class="roadmap">
             <h2>Project Roadmap</h2>
@@ -581,14 +605,14 @@
         
         <div class="notification">
             <p>
-                <strong>Transparency Notice:</strong> Labobo is an innovative cryptocurrency project currently in development. 
+                <strong>Transparency Notice:</strong> LABOBO is an innovative meme coin project currently in development. 
                 We're committed to building a transparent and community-driven ecosystem. 
                 As with all blockchain projects, participants should understand the technology and market dynamics.
             </p>
         </div>
         
         <footer>
-            © 2025 Labobo Project. All rights reserved. Labobo is a community-driven cryptocurrency initiative.
+            © 2025 LABOBO Project. All rights reserved. LABOBO is a community-driven meme coin initiative.
         </footer>
     </div>
 
@@ -644,3 +668,107 @@
     </script>
 </body>
 </html>
+
+
+
+
+        .nft-section {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(25, 25, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 2px solid #e94560;
+            box-shadow: 0 0 25px rgba(233, 69, 96, 0.5);
+        }
+
+        .nft-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #e94560, #8f94fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nft-tiers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .nft-card {
+            background: rgba(25, 25, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid;
+            box-shadow: 0 0 20px rgba(78, 84, 200, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nft-card.bronze {
+            border-color: #cd7f32; /* Bronze color */
+            box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+        }
+
+        .nft-card.silver {
+            border-color: #c0c0c0; /* Silver color */
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+        }
+
+        .nft-card.gold {
+            border-color: #ffd700; /* Gold color */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .nft-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .nft-card.bronze:hover {
+            box-shadow: 0 0 25px rgba(205, 127, 50, 0.8);
+        }
+
+        .nft-card.silver:hover {
+            box-shadow: 0 0 25px rgba(192, 192, 192, 0.8);
+        }
+
+        .nft-card.gold:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+        }
+
+        .nft-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .nft-card.bronze .nft-icon { color: #cd7f32; }
+        .nft-card.silver .nft-icon { color: #c0c0c0; }
+        .nft-card.gold .nft-icon { color: #ffd700; }
+
+        .nft-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #f8f9fa;
+        }
+
+        .nft-desc {
+            font-size: 1rem;
+            color: #c5c8ff;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .nft-card { max-width: 100%; }
+        }
+
+
