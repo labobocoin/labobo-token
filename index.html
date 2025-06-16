@@ -1,778 +1,779 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labobo - NFT & Crypto Project</title>
+    <title>LABOBO - ميم كوين الثورة الجديدة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #FF6B6B;
+            --accent: #4ECDC4;
+            --dark: #1A1A2E;
+            --darker: #16213E;
+            --light: #F8F9FA;
+            --text: #E6E6E6;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #0c1225 0%, #0d1a3a 50%, #0a1129 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: relative;
         }
         
-        .stars {
+        body::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .star {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle var(--duration) infinite ease-in-out;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; transform: scale(1.5); }
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 214, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 40%);
+            z-index: -1;
         }
         
         .container {
-            max-width: 1200px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 10;
-            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 20px;
         }
         
+        /* Header Styles */
         header {
-            margin-bottom: 40px;
-            width: 100%;
-        }
-        
-        .logo-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .logo {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 5px solid #e94560;
-            box-shadow: 0 0 25px rgba(233, 69, 96, 0.7);
-            position: relative;
-            overflow: hidden;
-            animation: pulse 4s infinite ease-in-out;
+            font-size: 28px;
+            color: var(--dark);
+            animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(233, 69, 96, 0.7); }
-            50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(233, 69, 96, 0.9); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 25px var(--primary); }
         }
         
-        .logo i {
-            font-size: 70px;
-            color: white;
-            animation: rotate 15s infinite linear;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .logo-ring {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            animation: rotate 20s infinite linear reverse;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #f8f9fa, #e94560, #8f94fb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: glow 2s infinite alternate;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(233, 69, 96, 0.7); }
-            to { text-shadow: 0 0 20px rgba(233, 69, 96, 0.9), 0 0 30px rgba(143, 148, 251, 0.6); }
-        }
-        
-        .coming-soon {
-            font-size: 3.5rem;
+        .logo-text {
+            font-family: 'Almarai', sans-serif;
             font-weight: 800;
-            margin: 20px 0;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            position: relative;
-            display: inline-block;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 15px rgba(143, 148, 251, 0.8);
-        }
-        
-        .coming-soon::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, #4e54c8, #e94560, #8f94fb);
-            border-radius: 10px;
-            animation: line-pulse 3s infinite ease-in-out;
-        }
-        
-        @keyframes line-pulse {
-            0%, 100% { transform: scaleX(1); opacity: 1; }
-            50% { transform: scaleX(1.1); opacity: 0.8; }
-        }
-        
-        .subtitle {
-            font-size: 1.4rem;
-            color: #8f94fb;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* NFT Section */
-        .nft-section {
-            width: 100%;
-            margin: 50px 0;
-        }
-        
-        .section-title {
             font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #f8f9fa;
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(to right, #e94560, #8f94fb);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            letter-spacing: -1px;
         }
         
-        .nft-tiers {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .nft-card {
-            background: rgba(25, 25, 50, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            width: 100%;
-            max-width: 350px;
-            border: 2px solid;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nft-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .nft-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-        }
-        
-        .bronze {
-            border-color: #cd7f32;
-        }
-        
-        .bronze::before {
-            background: linear-gradient(to right, #cd7f32, #a67c52);
-        }
-        
-        .silver {
-            border-color: #c0c0c0;
-        }
-        
-        .silver::before {
-            background: linear-gradient(to right, #c0c0c0, #d3d3d3);
-        }
-        
-        .gold {
-            border-color: #ffd700;
-        }
-        
-        .gold::before {
-            background: linear-gradient(to right, #ffd700, #daa520);
-        }
-        
-        .nft-header {
-            margin-bottom: 25px;
-        }
-        
-        .nft-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-        
-        .bronze .nft-icon {
-            color: #cd7f32;
-        }
-        
-        .silver .nft-icon {
-            color: #c0c0c0;
-        }
-        
-        .gold .nft-icon {
-            color: #ffd700;
-        }
-        
-        .nft-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .nft-subtitle {
-            font-size: 1.2rem;
-            color: #8f94fb;
-            margin-bottom: 20px;
-        }
-        
-        .nft-benefits {
-            text-align: left;
-            margin: 25px 0;
-        }
-        
-        .benefit {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .benefit i {
-            font-size: 20px;
-            margin-right: 15px;
+        .meme-tag {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
             margin-top: 5px;
         }
         
-        .bronze .benefit i {
-            color: #cd7f32;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
         
-        .silver .benefit i {
-            color: #c0c0c0;
-        }
-        
-        .gold .benefit i {
-            color: #ffd700;
-        }
-        
-        .benefit-content h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .benefit-content p {
-            font-size: 0.95rem;
-            color: #c5c8ff;
-        }
-        
-        .nft-footer {
-            margin-top: 20px;
-        }
-        
-        .nft-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .bronze .nft-price {
-            color: #cd7f32;
-        }
-        
-        .silver .nft-price {
-            color: #c0c0c0;
-        }
-        
-        .gold .nft-price {
-            color: #ffd700;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
+        nav a {
+            color: var(--text);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.1rem;
             transition: all 0.3s;
-            border: 2px solid;
+            position: relative;
+            padding: 5px 0;
         }
         
-        .bronze .btn {
-            background: rgba(205, 127, 50, 0.2);
-            color: #cd7f32;
-            border-color: #cd7f32;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
         }
         
-        .bronze .btn:hover {
-            background: rgba(205, 127, 50, 0.4);
-            box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+        nav a:hover {
+            color: var(--primary);
         }
         
-        .silver .btn {
-            background: rgba(192, 192, 192, 0.2);
-            color: #c0c0c0;
-            border-color: #c0c0c0;
+        nav a:hover::after {
+            width: 100%;
         }
         
-        .silver .btn:hover {
-            background: rgba(192, 192, 192, 0.4);
-            box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
         
-        .gold .btn {
-            background: rgba(255, 215, 0, 0.2);
-            color: #ffd700;
-            border-color: #ffd700;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
         }
         
-        .gold .btn:hover {
-            background: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            gap: 50px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .coin-animation {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .coin {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotate-coin 15s infinite linear;
+        }
+        
+        .coin-front, .coin-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+        
+        .coin-front {
+            background: linear-gradient(135deg, var(--primary) 0%, #FFA500 100%);
+            transform: rotateY(0deg);
+        }
+        
+        .coin-back {
+            background: linear-gradient(135deg, var(--secondary) 0%, #FF4500 100%);
+            transform: rotateY(180deg);
+        }
+        
+        .coin-logo {
+            font-family: 'Almarai', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            color: var(--dark);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes rotate-coin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .hero h1 {
+            font-family: 'Almarai', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: var(--text);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .secondary-button {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Roadmap Section */
+        .roadmap-section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title {
+            font-family: 'Almarai', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            right: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            right: 50%;
+        }
+        
+        .timeline-content {
+            padding: 30px;
+            background: rgba(25, 25, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+            border-color: var(--secondary);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Almarai', sans-serif;
+        }
+        
+        .timeline-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-badge {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border: 4px solid var(--darker);
+            border-radius: 50%;
+            top: 32px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-badge {
+            left: -15px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-badge {
+            right: -15px;
         }
         
         /* Features Section */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-            width: 100%;
-            max-width: 1000px;
+        .features-section {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            margin: 50px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .feature-card {
             background: rgba(25, 25, 50, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            max-width: 300px;
-            border: 2px solid #4e54c8;
-            box-shadow: 0 0 20px rgba(78, 84, 200, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            text-align: center;
         }
         
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px rgba(233, 69, 96, 0.5);
-            border-color: #e94560;
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(78, 205, 196, 0.2);
         }
         
         .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: #8f94fb;
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
         
         .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: #f8f9fa;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Almarai', sans-serif;
         }
         
         .feature-desc {
-            font-size: 1rem;
-            color: #c5c8ff;
-            line-height: 1.6;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
         }
         
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
+        /* Legal Notice */
+        .legal-notice {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 80px 0;
+            text-align: center;
         }
         
-        .social-link {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .legal-notice h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
         }
         
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(143, 148, 251, 0.8);
-            background: linear-gradient(135deg, #e94560 0%, #8f94fb 100%);
-        }
-        
-        .social-label {
-            display: block;
-            margin-top: 8px;
-            font-size: 0.9rem;
-            color: #c5c8ff;
-        }
-        
-        .social-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .legal-notice p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         /* Footer */
         footer {
-            margin-top: 40px;
-            color: #8f94fb;
-            font-size: 1rem;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            padding: 15px;
-            width: 100%;
-            border-top: 1px solid rgba(143, 148, 251, 0.3);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .copyright {
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero p {
+                margin: 0 auto 30px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .timeline::after {
+                right: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                right: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-badge {
+                left: 25px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-badge {
+                right: 25px;
+            }
         }
         
         @media (max-width: 768px) {
-            .logo-container { width: 120px; height: 120px; }
-            .logo i { font-size: 50px; }
-            h1 { font-size: 2.2rem; }
-            .coming-soon { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .nft-tiers { flex-direction: column; align-items: center; }
-            .nft-card { max-width: 100%; }
-            .social-link { width: 50px; height: 50px; font-size: 22px; }
-        }
-        
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            .coming-soon { font-size: 2rem; }
-            .subtitle { font-size: 1rem; }
-            .section-title { font-size: 2rem; }
-            .nft-title { font-size: 1.7rem; }
-            .nft-price { font-size: 1.5rem; }
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
-    
     <div class="container">
+        <!-- Header -->
         <header>
-            <div class="logo-container">
-                <div class="logo">
-                    <i class="fas fa-coins"></i>
-                    <div class="logo-ring"></div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fab fa-ethereum"></i>
+                </div>
+                <div>
+                    <div class="logo-text">LABOBO</div>
+                    <div class="meme-tag">ميم كوين</div>
                 </div>
             </div>
             
-            <h1>Labobo Crypto Project</h1>
-            <p class="subtitle">
-                A revolutionary cryptocurrency with innovative NFT rewards and real-world utility
-            </p>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#roadmap">خارطة الطريق</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#community">المجتمع</a></li>
+                </ul>
+            </nav>
+            
+            <button class="cta-button">المحفظة الرقمية</button>
         </header>
         
-        <div class="coming-soon">Coming Soon</div>
-        
-        <p class="subtitle">
-            We're building the future of digital currency with exclusive NFT benefits. Join our community for early access.
-        </p>
-        
-        <!-- NFT Section -->
-        <div class="nft-section">
-            <h2 class="section-title">Exclusive NFT Tiers</h2>
-            <p class="subtitle">Unlock premium benefits with our limited edition NFT collections</p>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>ثورة جديدة في عالم <span>الميم كوين</span></h1>
+                <p>LABOBO ليس مجرد عملة رقمية، إنها حركة ثقافية تهدف إلى خلق مجتمع ممتع ومربح للجميع. انضم إلينا في رحلتنا نحو المستقبل!</p>
+                
+                <div class="hero-buttons">
+                    <button class="cta-button">شراء LABOBO</button>
+                    <button class="secondary-button">الورقة البيضاء</button>
+                </div>
+            </div>
             
-            <div class="nft-tiers">
-                <!-- Bronze NFT -->
-                <div class="nft-card bronze">
-                    <div class="nft-header">
-                        <div class="nft-icon">
-                            <i class="fas fa-medal"></i>
+            <div class="hero-image">
+                <div class="coin-animation">
+                    <div class="coin">
+                        <div class="coin-front">
+                            <div class="coin-logo">LABOBO</div>
                         </div>
-                        <h3 class="nft-title">Bronze Tier</h3>
-                        <p class="nft-subtitle">Entry Level Benefits</p>
-                    </div>
-                    
-                    <div class="nft-benefits">
-                        <div class="benefit">
-                            <i class="fas fa-tag"></i>
-                            <div class="benefit-content">
-                                <h4>10% Discount</h4>
-                                <p>On all partner restaurants and stores</p>
-                            </div>
+                        <div class="coin-back">
+                            <div class="coin-logo">ميم كوين</div>
                         </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-ticket-alt"></i>
-                            <div class="benefit-content">
-                                <h4>Event Access</h4>
-                                <p>Priority access to community events</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-gem"></i>
-                            <div class="benefit-content">
-                                <h4>Early Access</h4>
-                                <p>To new features and token releases</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="nft-footer">
-                        <div class="nft-price">0.5 SOL</div>
-                        <a href="#" class="btn">Acquire NFT</a>
-                    </div>
-                </div>
-                
-                <!-- Silver NFT -->
-                <div class="nft-card silver">
-                    <div class="nft-header">
-                        <div class="nft-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="nft-title">Silver Tier</h3>
-                        <p class="nft-subtitle">Enhanced Privileges</p>
-                    </div>
-                    
-                    <div class="nft-benefits">
-                        <div class="benefit">
-                            <i class="fas fa-tags"></i>
-                            <div class="benefit-content">
-                                <h4>50% Discount</h4>
-                                <p>On all partner services and products</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <div class="benefit-content">
-                                <h4>5% Sales Share</h4>
-                                <p>Revenue share from ecosystem sales</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-vip"></i>
-                            <div class="benefit-content">
-                                <h4>VIP Treatment</h4>
-                                <p>Special services at partner locations</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="nft-footer">
-                        <div class="nft-price">2 SOL</div>
-                        <a href="#" class="btn">Acquire NFT</a>
-                    </div>
-                </div>
-                
-                <!-- Gold NFT -->
-                <div class="nft-card gold">
-                    <div class="nft-header">
-                        <div class="nft-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <h3 class="nft-title">Gold Tier</h3>
-                        <p class="nft-subtitle">Ultimate Experience</p>
-                    </div>
-                    
-                    <div class="nft-benefits">
-                        <div class="benefit">
-                            <i class="fas fa-infinity"></i>
-                            <div class="benefit-content">
-                                <h4>Free Access</h4>
-                                <p>Unlimited access to all partner venues</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-chart-line"></i>
-                            <div class="benefit-content">
-                                <h4>20% Sales Share</h4>
-                                <p>Significant revenue from ecosystem sales</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit">
-                            <i class="fas fa-handshake"></i>
-                            <div class="benefit-content">
-                                <h4>Decision Power</h4>
-                                <p>Voting rights on project development</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="nft-footer">
-                        <div class="nft-price">5 SOL</div>
-                        <a href="#" class="btn">Acquire NFT</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
+        <!-- Roadmap Section -->
+        <section class="roadmap-section" id="roadmap">
+            <div class="section-header">
+                <h2 class="section-title">خارطة الطريق</h2>
+                <p class="section-subtitle">رحلة تطوير LABOBO مليئة بالإنجازات المثيرة. تعرف على مراحل تطورنا ومستقبلنا المشرق</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-badge"></div>
+                        <h3>المرحلة الأولى: الإطلاق والتأسيس</h3>
+                        <p>• إطلاق العملة على شبكة سولانا</p>
+                        <p>• إنشاء مجتمعات على تويتر وتليجرام</p>
+                        <p>• بناء قاعدة جماهيرية أولية</p>
+                        <p>• تطوير موقع ويب تفاعلي</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-badge"></div>
+                        <h3>المرحلة الثانية: التوسع والنمو</h3>
+                        <p>• إدراج LABOBO على منصات تداول جديدة</p>
+                        <p>• تطوير نظام مكافآت لحاملي العملة</p>
+                        <p>• إطلاق أول مجموعة NFT حصرية</p>
+                        <p>• إبرام شراكات مع مشاريع مميزة</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-badge"></div>
+                        <h3>المرحلة الثالثة: المنفعة الواقعية</h3>
+                        <p>• إطلاق محفظة LABOBO الرقمية</p>
+                        <p>• شراكات مع متاجر ومطاعم محلية</p>
+                        <p>• تطوير نظام خصومات لحاملي العملة</p>
+                        <p>• إطلاق برنامج ولاء متميز</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-badge"></div>
+                        <h3>المرحلة الرابعة: الابتكار المستقبلي</h3>
+                        <p>• تطوير نظام DAO لحاملي العملة</p>
+                        <p>• إطلاق تطبيق جوال شامل</p>
+                        <p>• مشاريع خيرية لدعم المجتمع</p>
+                        <p>• التوسع عالمياً وفتح أسواق جديدة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Features Section -->
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-wallet"></i>
-                </div>
-                <h3 class="feature-title">Secure Wallet</h3>
-                <p class="feature-desc">
-                    Advanced digital wallet with top security standards to protect your assets
-                </p>
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <h2 class="section-title">لماذا تختار LABOBO؟</h2>
+                <p class="section-subtitle">اكتشف الميزات الفريدة التي تجعل من LABOBO الخيار الأمثل لعشاق الميم كوين</p>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-gift"></i>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">مجتمع قوي</h3>
+                    <p class="feature-desc">مجتمع نابض بالحياة يضم آلاف الأعضاء النشطين الذين يدعمون المشروع ويساهمون في نموه</p>
                 </div>
-                <h3 class="feature-title">Exclusive Rewards</h3>
-                <p class="feature-desc">
-                    Unique reward system for token holders with discounts and valuable benefits
-                </p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-store"></i>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="feature-title">ندرة وقيمة</h3>
+                    <p class="feature-desc">إجمالي المعروض محدود لضمان الندرة وزيادة القيمة مع مرور الوقت</p>
                 </div>
-                <h3 class="feature-title">Real Partnerships</h3>
-                <p class="feature-desc">
-                    Strategic alliances with restaurants, shops, and entertainment venues
-                </p>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">أمان عالي</h3>
+                    <p class="feature-desc">عقود ذكية مدققة ومراجعة من قبل خبراء الأمن لتأمين استثماراتك</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">مكافآت حصرية</h3>
+                    <p class="feature-desc">أنظمة مكافآت مبتكرة لحاملي العملة تزيد من أرباحك مع مرور الوقت</p>
+                </div>
             </div>
+        </section>
+        
+        <!-- Legal Notice -->
+        <div class="legal-notice">
+            <h3>تنويه قانوني هام</h3>
+            <p>
+                LABOBO هي عملة رقمية من فئة ميم كوين وليست أداة استثمارية. لا تمثل المعلومات الواردة في هذا الموقع نصيحة مالية أو توصية استثمارية. العملات الرقمية معرضة لتقلبات كبيرة في الأسعار وقد يفقد المستثمرون رأس مالهم بالكامل. يرجى إجراء البحث الخاص بك والتشاور مع مستشار مالي قبل اتخاذ أي قرارات استثمارية. هذا المشروع غير مرخص من قبل الهيئات المالية ولا يقدم ضمانات لأي عوائد مالية.
+            </p>
         </div>
         
-        <!-- Social Links -->
-        <div class="social-links">
-            <div class="social-box">
-                <a href="https://x.com/CoinLabobo?t=AJBa-eziE8KNJybXibgfhg&s=09" class="social-link" target="_blank">
+        <!-- Footer -->
+        <footer id="community">
+            <div class="social-links">
+                <a href="#" class="social-link">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <span class="social-label">Twitter</span>
-            </div>
-            
-            <div class="social-box">
-                <a href="https://t.me/LABOBO567" class="social-link" target="_blank">
+                <a href="#" class="social-link">
                     <i class="fab fa-telegram"></i>
                 </a>
-                <span class="social-label">Telegram</span>
-            </div>
-            
-            <div class="social-box">
                 <a href="#" class="social-link">
                     <i class="fab fa-discord"></i>
                 </a>
-                <span class="social-label">Discord</span>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
             
-            <div class="social-box">
-                <a href="#" class="social-link">
-                    <i class="fab fa-medium"></i>
-                </a>
-                <span class="social-label">Medium</span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fab fa-ethereum"></i>
+                </div>
+                <div>
+                    <div class="logo-text">LABOBO</div>
+                    <div class="meme-tag">ميم كوين</div>
+                </div>
             </div>
-        </div>
-        
-        <footer>
-            © 2025 Labobo Project. All rights reserved. Labobo is a community-driven cryptocurrency initiative.
+            
+            <p class="copyright">
+                © 2023 LABOBO Meme Coin. جميع الحقوق محفوظة. هذا المشروع غير مرخص من قبل الهيئات المالية.
+            </p>
         </footer>
     </div>
 
     <script>
-        // Create twinkling stars
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 100;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
                 
-                // Random sizes
-                const size = Math.random() * 2 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                // Random positions
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                
-                // Random duration and delay
-                const duration = Math.random() * 4 + 2;
-                const delay = Math.random() * 5;
-                star.style.setProperty('--duration', `${duration}s`);
-                star.style.animationDelay = `${delay}s`;
-                
-                starsContainer.appendChild(star);
-            }
-        }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
         
-        // Start animations
-        document.addEventListener('DOMContentLoaded', () => {
-            createStars();
-            
-            // Add logo animation
-            setTimeout(() => {
-                document.querySelector('.logo').style.animationPlayState = 'running';
-            }, 500);
+        // Animation for timeline items when they come into view
+        const timelineItems = document.querySelectorAll('.timeline-content');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        timelineItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
         });
     </script>
 </body>
