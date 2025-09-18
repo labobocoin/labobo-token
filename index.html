@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +16,9 @@
             --light: #F8F9FA;
             --text: #E6E6E6;
             --card-bg: rgba(30, 30, 60, 0.8);
+            --bronze: #CD7F32;
+            --silver: #C0C0C0;
+            --gold: #FFD700;
         }
         
         * {
@@ -393,12 +395,101 @@
             left: -15px;
         }
         
-        /* Features Section */
-        .features-section {
+        /* NFT Benefits Section */
+        .nft-section {
             padding: 80px 0;
             background: rgba(0, 0, 0, 0.1);
             border-radius: 50px;
             margin: 50px 0;
+        }
+        
+        .nft-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nft-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid;
+            transition: all 0.3s;
+        }
+        
+        .nft-card.bronze {
+            border-color: var(--bronze);
+        }
+        
+        .nft-card.silver {
+            border-color: var(--silver);
+        }
+        
+        .nft-card.gold {
+            border-color: var(--gold);
+        }
+        
+        .nft-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nft-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .bronze .nft-icon {
+            color: var(--bronze);
+        }
+        
+        .silver .nft-icon {
+            color: var(--silver);
+        }
+        
+        .gold .nft-icon {
+            color: var(--gold);
+        }
+        
+        .nft-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .bronze .nft-title {
+            color: var(--bronze);
+        }
+        
+        .silver .nft-title {
+            color: var(--silver);
+        }
+        
+        .gold .nft-title {
+            color: var(--gold);
+        }
+        
+        .nft-discount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .nft-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
         }
         
         .features-grid {
@@ -441,45 +532,6 @@
         .feature-desc {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--text);
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            padding: 80px 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
             color: var(--text);
         }
         
@@ -610,6 +662,11 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .nft-cards {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -629,6 +686,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#nft">NFT Benefits</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#community">Community</a></li>
                 </ul>
@@ -659,28 +717,6 @@
                             <div class="coin-logo">Meme Coin</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">100K+</div>
-                    <div class="stat-label">Community Members</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">$50M+</div>
-                    <div class="stat-label">Market Cap</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Exchange Listings</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">1B+</div>
-                    <div class="stat-label">Total Supply</div>
                 </div>
             </div>
         </section>
@@ -721,6 +757,8 @@
                         <p>• Partnerships with local stores and restaurants</p>
                         <p>• Develop discount system for holders</p>
                         <p>• Launch premium loyalty program</p>
+                        <p>• Introduce NFT-based discount system with Bronze (20%) and Silver (30%) tiers</p>
+                        <p>• Establish partnerships with restaurants, stores and cafes in multiple countries</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -731,7 +769,49 @@
                         <p>• Launch comprehensive mobile app</p>
                         <p>• Charity projects to support community</p>
                         <p>• Global expansion and new markets</p>
+                        <p>• Launch rare Gold tier NFT with exclusive benefits</p>
+                        <p>• Expand NFT utility to more industries and services</p>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- NFT Benefits Section -->
+        <section class="nft-section" id="nft">
+            <div class="section-header">
+                <h2 class="section-title">LABOBO NFT Benefits</h2>
+                <p class="section-subtitle">Exclusive discounts and privileges for our NFT holders in restaurants, stores and cafes worldwide</p>
+            </div>
+            
+            <div class="nft-cards">
+                <div class="nft-card bronze">
+                    <div class="nft-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="nft-title">Bronze Tier</h3>
+                    <div class="nft-discount">20% OFF</div>
+                    <p class="nft-desc">Available to holders of 50,000 LABOBO tokens. Enjoy 20% discounts at participating establishments worldwide.</p>
+                    <button class="secondary-button">Learn More</button>
+                </div>
+                
+                <div class="nft-card silver">
+                    <div class="nft-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="nft-title">Silver Tier</h3>
+                    <div class="nft-discount">30% OFF</div>
+                    <p class="nft-desc">Available to holders of 200,000 LABOBO tokens. Enjoy 30% discounts at premium partner locations globally.</p>
+                    <button class="secondary-button">Learn More</button>
+                </div>
+                
+                <div class="nft-card gold">
+                    <div class="nft-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="nft-title">Gold Tier</h3>
+                    <div class="nft-discount">Exclusive</div>
+                    <p class="nft-desc">Rare NFT available only to top holders. Exclusive benefits and premium access to special events and services.</p>
+                    <button class="secondary-button">Coming Soon</button>
                 </div>
             </div>
         </section>
@@ -850,47 +930,26 @@
             observer.observe(item);
         });
         
-        // Add animation for stats counting
-        const statNumbers = document.querySelectorAll('.stat-number');
-        const statsSection = document.querySelector('.stats-section');
+        // Animation for NFT cards
+        const nftCards = document.querySelectorAll('.nft-card');
         
-        const statsObserver = new IntersectionObserver((entries) => {
+        const nftObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    statNumbers.forEach(stat => {
-                        const target = +stat.innerText.replace(/[^\d.]/g, '');
-                        const duration = 2000;
-                        const step = target / (duration / 16);
-                        let current = 0;
-                        
-                        const timer = setInterval(() => {
-                            current += step;
-                            if (current >= target) {
-                                clearInterval(timer);
-                                stat.innerText = stat.innerText.replace(/[\d.]+/, formatNumber(target));
-                            } else {
-                                stat.innerText = stat.innerText.replace(/[\d.]+/, formatNumber(Math.floor(current)));
-                            }
-                        }, 16);
-                    });
-                    statsObserver.unobserve(entry.target);
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, {
-            threshold: 0.5
+            threshold: 0.1
         });
         
-        statsObserver.observe(statsSection);
-        
-        function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            } else if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'K';
-            }
-            return num.toString();
-        }
+        nftCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            nftObserver.observe(card);
+        });
     </script>
 </body>
-</html>        
-    
+</html>
