@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+    <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LABOBO - ميم كوين الثورة الجديدة</title>
+    <title>LABOBO - The Revolutionary Meme Coin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #FFD700;
@@ -15,13 +16,14 @@
             --darker: #16213E;
             --light: #F8F9FA;
             --text: #E6E6E6;
+            --card-bg: rgba(30, 30, 60, 0.8);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
@@ -31,6 +33,7 @@
             overflow-x: hidden;
             position: relative;
             line-height: 1.7;
+            text-align: left;
         }
         
         body::before {
@@ -83,7 +86,7 @@
         
         .logo-icon::before {
             content: "L";
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 32px;
         }
@@ -94,7 +97,7 @@
         }
         
         .logo-text {
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 2.5rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -134,7 +137,7 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            right: 0;
             width: 0;
             height: 2px;
             background: var(--primary);
@@ -223,7 +226,7 @@
         }
         
         .coin-logo {
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 3.5rem;
             color: var(--dark);
@@ -236,7 +239,7 @@
         }
         
         .hero h1 {
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 3.5rem;
             line-height: 1.2;
@@ -291,7 +294,7 @@
         }
         
         .section-title {
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 3rem;
             margin-bottom: 20px;
@@ -322,8 +325,8 @@
             background: linear-gradient(to bottom, var(--primary), var(--secondary));
             top: 0;
             bottom: 0;
-            right: 50%;
-            margin-right: -3px;
+            left: 50%;
+            margin-left: -3px;
             border-radius: 10px;
         }
         
@@ -335,16 +338,16 @@
         }
         
         .timeline-item:nth-child(odd) {
-            right: 0;
+            left: 0;
         }
         
         .timeline-item:nth-child(even) {
-            right: 50%;
+            left: 50%;
         }
         
         .timeline-content {
             padding: 30px;
-            background: rgba(25, 25, 50, 0.7);
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             border: 2px solid var(--primary);
@@ -362,7 +365,7 @@
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--primary);
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .timeline-content p {
@@ -383,11 +386,11 @@
         }
         
         .timeline-item:nth-child(odd) .timeline-badge {
-            left: -15px;
+            right: -15px;
         }
         
         .timeline-item:nth-child(even) .timeline-badge {
-            right: -15px;
+            left: -15px;
         }
         
         /* Features Section */
@@ -407,7 +410,7 @@
         }
         
         .feature-card {
-            background: rgba(25, 25, 50, 0.7);
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
@@ -432,12 +435,51 @@
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--primary);
-            font-family: 'Almarai', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .feature-desc {
             font-size: 1.1rem;
             line-height: 1.7;
+            color: var(--text);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
             color: var(--text);
         }
         
@@ -519,25 +561,25 @@
             }
             
             .timeline::after {
-                right: 31px;
+                left: 31px;
             }
             
             .timeline-item {
                 width: 100%;
-                padding-right: 70px;
-                padding-left: 25px;
+                padding-left: 70px;
+                padding-right: 25px;
             }
             
             .timeline-item:nth-child(even) {
-                right: 0;
+                left: 0;
             }
             
             .timeline-item:nth-child(odd) .timeline-badge {
-                left: 25px;
+                right: 25px;
             }
             
             .timeline-item:nth-child(even) .timeline-badge {
-                right: 25px;
+                left: 25px;
             }
         }
         
@@ -563,6 +605,11 @@
             .logo-text {
                 font-size: 2rem;
             }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -574,31 +621,31 @@
                 <div class="logo-icon"></div>
                 <div>
                     <div class="logo-text">LABOBO</div>
-                    <div class="meme-tag">ميم كوين</div>
+                    <div class="meme-tag">Meme Coin</div>
                 </div>
             </div>
             
             <nav>
                 <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#roadmap">خارطة الطريق</a></li>
-                    <li><a href="#features">المميزات</a></li>
-                    <li><a href="#community">المجتمع</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#community">Community</a></li>
                 </ul>
             </nav>
             
-            <button class="cta-button">المحفظة الرقمية</button>
+            <button class="cta-button">Wallet</button>
         </header>
         
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
-                <h1>ثورة جديدة في عالم <span>الميم كوين</span></h1>
-                <p>LABOBO ليس مجرد عملة رقمية، إنها حركة ثقافية تهدف إلى خلق مجتمع ممتع ومربح للجميع. انضم إلينا في رحلتنا نحو المستقبل!</p>
+                <h1>A New Revolution in <span>Meme Coin</span></h1>
+                <p>LABOBO is not just a cryptocurrency, it's a cultural movement aimed at creating a fun and profitable community for everyone. Join us on our journey to the future!</p>
                 
                 <div class="hero-buttons">
-                    <button class="cta-button">شراء LABOBO</button>
-                    <button class="secondary-button">الورقة البيضاء</button>
+                    <button class="cta-button">Buy LABOBO</button>
+                    <button class="secondary-button">Whitepaper</button>
                 </div>
             </div>
             
@@ -609,9 +656,31 @@
                             <div class="coin-logo">LABOBO</div>
                         </div>
                         <div class="coin-back">
-                            <div class="coin-logo">ميم كوين</div>
+                            <div class="coin-logo">Meme Coin</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$50M+</div>
+                    <div class="stat-label">Market Cap</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Exchange Listings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1B+</div>
+                    <div class="stat-label">Total Supply</div>
                 </div>
             </div>
         </section>
@@ -619,49 +688,49 @@
         <!-- Roadmap Section -->
         <section class="roadmap-section" id="roadmap">
             <div class="section-header">
-                <h2 class="section-title">خارطة الطريق</h2>
-                <p class="section-subtitle">رحلة تطوير LABOBO مليئة بالإنجازات المثيرة. تعرف على مراحل تطورنا ومستقبلنا المشرق</p>
+                <h2 class="section-title">Roadmap</h2>
+                <p class="section-subtitle">LABOBO's development journey is full of exciting achievements. Discover our growth stages and bright future</p>
             </div>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-badge"></div>
-                        <h3>المرحلة الأولى: الإطلاق والتأسيس (2025)</h3>
-                        <p>• إطلاق العملة على شبكة سولانا</p>
-                        <p>• إنشاء مجتمعات على تويتر وتليجرام</p>
-                        <p>• بناء قاعدة جماهيرية أولية</p>
-                        <p>• تطوير موقع ويب تفاعلي</p>
+                        <h3>Phase 1: Launch & Foundation (2025)</h3>
+                        <p>• Launch on Solana network</p>
+                        <p>• Build communities on Twitter and Telegram</p>
+                        <p>• Establish initial user base</p>
+                        <p>• Develop interactive website</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-badge"></div>
-                        <h3>المرحلة الثانية: التوسع والنمو (2025)</h3>
-                        <p>• إدراج LABOBO على منصات تداول جديدة</p>
-                        <p>• تطوير نظام مكافآت لحاملي العملة</p>
-                        <p>• إطلاق أول مجموعة NFT حصرية</p>
-                        <p>• إبرام شراكات مع مشاريع مميزة</p>
+                        <h3>Phase 2: Expansion & Growth (2025)</h3>
+                        <p>• List LABOBO on new trading platforms</p>
+                        <p>• Develop reward system for holders</p>
+                        <p>• Launch first exclusive NFT collection</p>
+                        <p>• Establish partnerships with notable projects</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-badge"></div>
-                        <h3>المرحلة الثالثة: المنفعة الواقعية (2026)</h3>
-                        <p>• إطلاق محفظة LABOBO الرقمية</p>
-                        <p>• شراكات مع متاجر ومطاعم محلية</p>
-                        <p>• تطوير نظام خصومات لحاملي العملة</p>
-                        <p>• إطلاق برنامج ولاء متميز</p>
+                        <h3>Phase 3: Real-World Utility (2026)</h3>
+                        <p>• Launch LABOBO digital wallet</p>
+                        <p>• Partnerships with local stores and restaurants</p>
+                        <p>• Develop discount system for holders</p>
+                        <p>• Launch premium loyalty program</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-badge"></div>
-                        <h3>المرحلة الرابعة: الابتكار المستقبلي (2027)</h3>
-                        <p>• تطوير نظام DAO لحاملي العملة</p>
-                        <p>• إطلاق تطبيق جوال شامل</p>
-                        <p>• مشاريع خيرية لدعم المجتمع</p>
-                        <p>• التوسع عالمياً وفتح أسواق جديدة</p>
+                        <h3>Phase 4: Future Innovation (2027)</h3>
+                        <p>• Develop DAO system for holders</p>
+                        <p>• Launch comprehensive mobile app</p>
+                        <p>• Charity projects to support community</p>
+                        <p>• Global expansion and new markets</p>
                     </div>
                 </div>
             </div>
@@ -670,8 +739,8 @@
         <!-- Features Section -->
         <section class="features-section" id="features">
             <div class="section-header">
-                <h2 class="section-title">لماذا تختار LABOBO؟</h2>
-                <p class="section-subtitle">اكتشف الميزات الفريدة التي تجعل من LABOBO الخيار الأمثل لعشاق الميم كوين</p>
+                <h2 class="section-title">Why Choose LABOBO?</h2>
+                <p class="section-subtitle">Discover the unique features that make LABOBO the ideal choice for meme coin enthusiasts</p>
             </div>
             
             <div class="features-grid">
@@ -679,41 +748,41 @@
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="feature-title">مجتمع قوي</h3>
-                    <p class="feature-desc">مجتمع نابض بالحياة يضم آلاف الأعضاء النشطين الذين يدعمون المشروع ويساهمون في نموه</p>
+                    <h3 class="feature-title">Strong Community</h3>
+                    <p class="feature-desc">A vibrant community with thousands of active members who support the project and contribute to its growth</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-gem"></i>
                     </div>
-                    <h3 class="feature-title">ندرة وقيمة</h3>
-                    <p class="feature-desc">إجمالي المعروض محدود لضمان الندرة وزيادة القيمة مع مرور الوقت</p>
+                    <h3 class="feature-title">Scarcity & Value</h3>
+                    <p class="feature-desc">Limited total supply to ensure scarcity and increase value over time</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="feature-title">أمان عالي</h3>
-                    <p class="feature-desc">عقود ذكية مدققة ومراجعة من قبل خبراء الأمن لتأمين استثماراتك</p>
+                    <h3 class="feature-title">High Security</h3>
+                    <p class="feature-desc">Smart contracts audited and reviewed by security experts to secure your investments</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-gift"></i>
                     </div>
-                    <h3 class="feature-title">مكافآت حصرية</h3>
-                    <p class="feature-desc">أنظمة مكافآت مبتكرة لحاملي العملة تزيد من أرباحك مع مرور الوقت</p>
+                    <h3 class="feature-title">Exclusive Rewards</h3>
+                    <p class="feature-desc">Innovative reward systems for coin holders that increase your profits over time</p>
                 </div>
             </div>
         </section>
         
         <!-- Legal Notice -->
         <div class="legal-notice">
-            <h3>معلومات هامة للمستثمرين</h3>
+            <h3>Important Information for Investors</h3>
             <p>
-                LABOBO هي عملة رقمية ترفيهية من فئة ميم كوين، تهدف إلى خلق مجتمع ممتع حول مفهوم العملات الرقمية. كما هو الحال مع جميع الأصول الرقمية، فإن قيمة LABOBO قد تتقلب بشكل كبير. ننصح جميع الأعضاء بالاستثمار بحكمة والتأكد من فهمهم الكامل لمخاطر العملات الرقمية. هذا المشروع هو مبادرة مجتمعية وليس عرضًا استثماريًا خاضعًا للتنظيم.
+                LABOBO is an entertainment cryptocurrency in the meme coin category, aimed at creating a fun community around the concept of digital currencies. As with all digital assets, the value of LABOBO may fluctuate significantly. We advise all members to invest wisely and ensure they fully understand the risks of cryptocurrencies. This project is a community initiative and not a regulated investment offering.
             </p>
         </div>
         
@@ -738,12 +807,12 @@
                 <div class="logo-icon"></div>
                 <div>
                     <div class="logo-text">LABOBO</div>
-                    <div class="meme-tag">ميم كوين</div>
+                    <div class="meme-tag">Meme Coin</div>
                 </div>
             </div>
             
             <p class="copyright">
-                © 2025 LABOBO Meme Coin. جميع الحقوق محفوظة. مبادرة مجتمعية.
+                © 2025 LABOBO Meme Coin. All rights reserved. A community initiative.
             </p>
         </footer>
     </div>
@@ -780,6 +849,48 @@
             item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(item);
         });
+        
+        // Add animation for stats counting
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statsSection = document.querySelector('.stats-section');
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statNumbers.forEach(stat => {
+                        const target = +stat.innerText.replace(/[^\d.]/g, '');
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                clearInterval(timer);
+                                stat.innerText = stat.innerText.replace(/[\d.]+/, formatNumber(target));
+                            } else {
+                                stat.innerText = stat.innerText.replace(/[\d.]+/, formatNumber(Math.floor(current)));
+                            }
+                        }, 16);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        statsObserver.observe(statsSection);
+        
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
     </script>
 </body>
-</html>
+</html>        
+    
