@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labobo - Utility Token with Heart</title>
+    <title>Labobo - Revolutionary Utility Token on Solana</title>
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -112,19 +110,188 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: var(--gray-light);
-        }
-
-        .cta-buttons {
+        .hero-badges {
             display: flex;
-            gap: 1rem;
             justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
             flex-wrap: wrap;
         }
 
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        /* Social Links in Header */
+        .social-links-header {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link-header {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-gold);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-link-header:hover {
+            background: var(--accent-gold);
+            color: var(--dark-blue);
+        }
+
+        /* Detailed Roadmap Section */
+        .detailed-roadmap {
+            padding: 80px 0;
+            background: var(--dark-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--white);
+        }
+
+        .roadmap-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .roadmap-year {
+            margin-bottom: 3rem;
+        }
+
+        .year-title {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .roadmap-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .roadmap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .item-phase {
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .item-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .item-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .item-features li:before {
+            content: "✓";
+            color: var(--charity-green);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Team Token Lock */
+        .team-lock {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .lock-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .lock-icon {
+            font-size: 2rem;
+        }
+
+        /* NFT Revolution Section */
+        .nft-revolution {
+            padding: 80px 0;
+            background: var(--gradient-primary);
+            text-align: center;
+        }
+
+        .revolution-scenario {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .scenario-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-highlight {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Tokenomics Section */
+        .tokenomics {
+            padding: 80px 0;
+            background: var(--dark-blue);
+        }
+
+        .tokenomics-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tokenomic-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .tokenomic-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons and Links */
         .btn {
             padding: 12px 30px;
             border: none;
@@ -153,203 +320,25 @@
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: var(--dark-blue);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--white);
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: var(--gradient-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-gold);
-        }
-
-        /* NFT System Section */
-        .nft-system {
-            padding: 80px 0;
+        /* Social Links Section */
+        .social-section {
+            padding: 60px 0;
             background: var(--gradient-primary);
-        }
-
-        .nft-tiers {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .tier-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .tier-card.bronze {
-            border-color: #CD7F32;
-        }
-
-        .tier-card.silver {
-            border-color: #C0C0C0;
-        }
-
-        .tier-card.gold {
-            border-color: var(--accent-gold);
-            transform: scale(1.05);
-        }
-
-        .tier-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .tier-card.gold:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .tier-badge {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .bronze .tier-badge {
-            background: #CD7F32;
-        }
-
-        .silver .tier-badge {
-            background: #C0C0C0;
-            color: var(--dark-blue);
-        }
-
-        .gold .tier-badge {
-            background: var(--gradient-gold);
-            color: var(--dark-blue);
-        }
-
-        /* Charity Section */
-        .charity {
-            padding: 80px 0;
-            background: var(--dark-blue);
             text-align: center;
         }
 
-        .charity-stats {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: var(--charity-green);
-            padding: 2rem;
-            border-radius: 15px;
-            color: var(--white);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Roadmap Section */
-        .roadmap {
-            padding: 80px 0;
-            background: var(--gradient-primary);
-        }
-
-        .roadmap-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-        }
-
-        .roadmap-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 15px;
-            border-left: 4px solid var(--accent-gold);
-        }
-
-        .roadmap-phase {
-            color: var(--accent-gold);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Community Section */
-        .community {
-            padding: 80px 0;
-            background: var(--dark-blue);
-            text-align: center;
-        }
-
-        .social-links {
+        .social-buttons {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .social-link {
+        .social-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2rem;
             background: var(--gradient-gold);
             color: var(--dark-blue);
@@ -359,35 +348,29 @@
             transition: transform 0.3s ease;
         }
 
-        .social-link:hover {
+        .social-button:hover {
             transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: var(--gradient-primary);
+            background: var(--dark-blue);
             padding: 3rem 0;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
             .nav-links {
                 display: none;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
+            .social-links-header {
+                display: none;
             }
         }
     </style>
@@ -401,135 +384,193 @@
                 <div class="logo-text">Labobo</div>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#nft">NFT System</a></li>
-                <li><a href="#charity">Charity</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#community">Community</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#nft">NFT Revolution</a></li>
+                <li><a href="#social">Community</a></li>
             </ul>
+            <div class="social-links-header">
+                <a href="https://x.com/CoinLabobo" class="social-link-header">X</a>
+                <a href="https://t.me/LABOBO567" class="social-link-header">Telegram</a>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Utility Token with Heart</h1>
-            <p>Labobo revolutionizes crypto with real-world utility, NFT membership system, and sustainable charity donations to cancer hospitals and orphanages.</p>
+            <h1>The Crypto Revolution Has a Heart</h1>
+            <p>Labobo - Utility token on Solana blockchain combining real-world benefits with sustainable charity</p>
+            <div class="hero-badges">
+                <div class="badge">🔥 Powered by Solana</div>
+                <div class="badge">🎫 Revolutionary NFT System</div>
+                <div class="badge">❤️ Supporting Charity</div>
+            </div>
             <div class="cta-buttons">
-                <a href="#community" class="btn btn-primary">Join Community</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+                <a href="#social" class="btn btn-primary">Join Community</a>
+                <a href="#roadmap" class="btn btn-secondary">Explore Roadmap</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="section-title">Why Choose Labobo?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎁</div>
-                <h3>Real Utility</h3>
-                <p>NFT membership system providing real discounts at partner stores, cafes, and restaurants.</p>
+    <!-- Detailed Roadmap Section -->
+    <section class="detailed-roadmap" id="roadmap">
+        <div class="roadmap-container">
+            <h2 class="section-title">Detailed Roadmap</h2>
+            
+            <div class="roadmap-year">
+                <h3 class="year-title">🎯 2025 - Foundation & Launch</h3>
+                <div class="roadmap-items">
+                    <div class="roadmap-item">
+                        <div class="item-phase">Phase 1 - Q1 2025</div>
+                        <h4 class="item-title">Token Launch on Solana</h4>
+                        <p>Official deployment of Labobo token on Solana network with secure liquidity pool</p>
+                        <ul class="item-features">
+                            <li>Smart contract deployment and audit</li>
+                            <li>Liquidity pool establishment on Raydium</li>
+                            <li>Community airdrop for early supporters</li>
+                            <li>Token listing on Solana DEXs</li>
+                        </ul>
+                        <div class="team-lock">
+                            <div class="lock-info">
+                                <div class="lock-icon">🔒</div>
+                                <div>
+                                    <strong>Team Tokens Locked for 3 Years</strong>
+                                    <p>Smart contract will be published on X for transparency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="item-phase">Phase 2 - Q2 2025</div>
+                        <h4 class="item-title">Community Growth & Partnerships</h4>
+                        <ul class="item-features">
+                            <li>Reach 10,000+ community members</li>
+                            <li>Establish 50+ local business partnerships</li>
+                            <li>First charity donations to cancer hospitals</li>
+                            <li>Mobile app development initiation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">❤️</div>
-                <h3>Sustainable Charity</h3>
-                <p>Monthly donations to cancer hospitals and orphanages. Your investment makes a difference.</p>
+
+            <div class="roadmap-year">
+                <h3 class="year-title">🚀 2026 - Ecosystem Expansion</h3>
+                <div class="roadmap-items">
+                    <div class="roadmap-item">
+                        <div class="item-phase">Phase 3 - Q1 2026</div>
+                        <h4 class="item-title">Major Exchange Listings</h4>
+                        <ul class="item-features">
+                            <li>Listing on centralized exchanges (CEX)</li>
+                            <li>International business partnerships</li>
+                            <li>Community growth to 50,000+ members</li>
+                            <li>Charity donations reach $100,000+</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Global Community</h3>
-                <p>Join 1,500+ members building the future of utility-driven cryptocurrency.</p>
+
+            <div class="roadmap-year">
+                <h3 class="year-title">💎 2026 - NFT Revolution Launch</h3>
+                <div class="roadmap-items">
+                    <div class="roadmap-item">
+                        <div class="item-phase">Phase 4 - Q3 2026</div>
+                        <h4 class="item-title">Revolutionary NFT System Launch</h4>
+                        <p><strong>The game-changing moment:</strong> Three-tier NFT membership that transforms daily life</p>
+                        <ul class="item-features">
+                            <li>Bronze Tier: 20% discounts at partner locations</li>
+                            <li>Silver Tier: 30% discounts + premium benefits</li>
+                            <li>Gold Tier: Near-free experiences + VIP access</li>
+                            <li>Requirement: Hold Labobo tokens + SOL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-year">
+                <h3 class="year-title">📱 2027 - Ecosystem Completion</h3>
+                <div class="roadmap-items">
+                    <div class="roadmap-item">
+                        <div class="item-phase">Phase 5 - 2027</div>
+                        <h4 class="item-title">Labobo Wallet & Mobile Apps</h4>
+                        <ul class="item-features">
+                            <li>Dedicated Labobo wallet launch</li>
+                            <li>iOS & Android mobile applications</li>
+                            <li>Complete ecosystem integration</li>
+                            <li>1,000+ partner establishments worldwide</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- NFT System Section -->
-    <section class="nft-system" id="nft">
-        <h2 class="section-title">NFT Membership System</h2>
-        <div class="nft-tiers">
-            <div class="tier-card bronze">
-                <div class="tier-badge">B</div>
-                <h3>Bronze Tier</h3>
-                <p>20% Discounts</p>
-                <p>Basic Benefits</p>
-                <p>Community Access</p>
+    <!-- NFT Revolution Scenario -->
+    <section class="nft-revolution" id="nft">
+        <div class="roadmap-container">
+            <h2 class="section-title">The Revolution is Coming</h2>
+            <div class="revolution-scenario">
+                <p class="scenario-text">"You're at a restaurant, and the waiter says: </p>
+                <p class="scenario-text"><span class="scenario-highlight">'If you own Labobo NFT, you can eat almost for FREE!'</span>"</p>
+                <p class="scenario-text">This is the future we're building - where crypto meets real life.</p>
             </div>
-            <div class="tier-card silver">
-                <div class="tier-badge">S</div>
-                <h3>Silver Tier</h3>
-                <p>30% Discounts</p>
-                <p>Premium Benefits</p>
-                <p>Early Access</p>
-            </div>
-            <div class="tier-card gold">
-                <div class="tier-badge">G</div>
-                <h3>Gold Tier</h3>
-                <p>Exclusive Discounts</p>
-                <p>VIP Benefits</p>
-                <p>Rare Collection</p>
+            <p><strong>To get Labobo NFT:</strong> You need to hold Labobo tokens + SOL in your wallet</p>
+            <p>The required amount will be announced before NFT launch</p>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="tokenomics" id="tokenomics">
+        <div class="roadmap-container">
+            <h2 class="section-title">Token Information</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomic-card">
+                    <h3>🔗 Blockchain</h3>
+                    <p>Solana Network</p>
+                    <p>Fast & Low fees</p>
+                </div>
+                <div class="tokenomic-card">
+                    <h3>🎯 Token Utility</h3>
+                    <p>NFT Access</p>
+                    <p>Governance Rights</p>
+                    <p>Charity Funding</p>
+                </div>
+                <div class="tokenomic-card">
+                    <h3>🔄 NFT Requirement</h3>
+                    <p>Hold Labobo + SOL</p>
+                    <p>Amount: To be determined</p>
+                </div>
+                <div class="tokenomic-card">
+                    <h3>🔒 Team Tokens</h3>
+                    <p>Locked for 3 Years</p>
+                    <p>Contract on X</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Charity Section -->
-    <section class="charity" id="charity">
-        <h2 class="section-title">Making a Difference</h2>
-        <div class="charity-stats">
-            <div class="stat-card">
-                <div class="stat-number">30%</div>
-                <div>Monthly Profits to Charity</div>
+    <!-- Social Links Section -->
+    <section class="social-section" id="social">
+        <div class="roadmap-container">
+            <h2 class="section-title">Join Our Community</h2>
+            <p>Be part of the revolution in utility-driven cryptocurrency with heart.</p>
+            <div class="social-buttons">
+                <a href="https://x.com/CoinLabobo" class="social-button">
+                    <span>🐦</span>
+                    Follow on X
+                </a>
+                <a href="https://t.me/LABOBO567" class="social-button">
+                    <span>📢</span>
+                    Join Telegram
+                </a>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">2</div>
-                <div>Causes Supported</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1500+</div>
-                <div>Community Members</div>
-            </div>
-        </div>
-        <p>Every transaction contributes to our mission of supporting cancer patients and orphaned children.</p>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section class="roadmap" id="roadmap">
-        <h2 class="section-title">Our Journey</h2>
-        <div class="roadmap-timeline">
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 1 - Complete</div>
-                <h3>Community Building</h3>
-                <p>Successfully built 1,500+ member community and established project vision.</p>
-            </div>
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 2 - Current</div>
-                <h3>Token Launch & Partnerships</h3>
-                <p>Launching on Solana and establishing partnerships with local businesses.</p>
-            </div>
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Phase 3 - Future</div>
-                <h3>NFT System Launch</h3>
-                <p>Deploying three-tier NFT membership system with real-world benefits.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Section -->
-    <section class="community" id="community">
-        <h2 class="section-title">Join Our Community</h2>
-        <p>Be part of the revolution in utility-driven cryptocurrency with heart.</p>
-        <div class="social-links">
-            <a href="#" class="social-link">Telegram</a>
-            <a href="#" class="social-link">Twitter</a>
-            <a href="#" class="social-link">GitHub</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Labobo Token. All rights reserved.</p>
-        <p>Utility Token with Heart ❤️</p>
+        <p>&copy; 2025 Labobo Token. All rights reserved.</p>
+        <p>Utility Token with Heart ❤️ | Built on Solana</p>
     </footer>
 
     <script>
@@ -543,7 +584,7 @@
             });
         });
 
-        // Add scroll effect to header
+        // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
