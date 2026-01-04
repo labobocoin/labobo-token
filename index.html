@@ -3,123 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$LABOBO | The Future of Chaotic Wealth</title>
+    <title>$LABOBO | More Than A Meme</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #bc13fe; 
-            --secondary: #ffcc00; 
-            --bg-dark: #050505;
-            --card-bg: #111111;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Rajdhani', sans-serif;
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a0033 0%, #050505 100%);
-            padding: 40px 20px;
-        }
-
-        .social-bar {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .social-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2);
-            filter: drop-shadow(0 0 15px var(--primary));
-        }
-
-        .main-hero-img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px var(--primary);
-            border: 2px solid var(--primary);
-            margin-bottom: 20px;
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            color: var(--secondary);
-            margin: 10px 0;
-        }
-
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-
-        .btn {
-            padding: 15px 35px;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
+        :root { --primary: #bc13fe; --secondary: #ffcc00; --bg-dark: #050505; --card-bg: #111111; }
+        body { margin: 0; font-family: 'Rajdhani', sans-serif; background-color: var(--bg-dark); color: #ffffff; scroll-behavior: smooth; }
+        header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #1a0033 0%, #050505 100%); padding: 40px 20px; }
+        .social-bar { display: flex; gap: 20px; margin-bottom: 30px; }
+        .social-icon { font-size: 2.5rem; color: var(--secondary); text-decoration: none; transition: 0.3s; }
+        .social-icon:hover { transform: scale(1.2); filter: drop-shadow(0 0 15px var(--primary)); }
+        .main-hero-img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 0 0 30px var(--primary); border: 2px solid var(--primary); margin-bottom: 20px; animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--secondary); margin: 10px 0; text-shadow: 0 0 15px rgba(255,204,0,0.5); }
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+        .btn { padding: 15px 35px; border: 2px solid var(--secondary); color: var(--secondary); text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.3s; border-radius: 5px; }
         .btn:hover { background: var(--secondary); color: #000; box-shadow: 0 0 20px var(--secondary); }
-
         .container { padding: 80px 10%; }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary);
-        }
-
-        .card h3 { color: var(--secondary); margin-top: 0; }
-
-        /* Timeline Style for Roadmap */
-        .roadmap-item {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            border-left: 2px solid var(--secondary);
-        }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #777; }
+        .section-title { font-family: 'Orbitron', sans-serif; text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); padding: 35px; border-radius: 15px; border: 1px solid #222; border-bottom: 4px solid var(--primary); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--secondary); }
+        .card h3 { color: var(--secondary); font-family: 'Orbitron'; margin-top: 0; margin-bottom: 15px; }
+        .roadmap-box { border-left: 3px solid var(--primary); padding-left: 25px; margin-bottom: 40px; position: relative; }
+        .roadmap-box::before { content: ''; position: absolute; left: -10px; top: 0; width: 18px; height: 18px; background: var(--secondary); border-radius: 50%; box-shadow: 0 0 10px var(--secondary); }
+        footer { text-align: center; padding: 60px; border-top: 1px solid #222; color: #666; background: #000; }
     </style>
 </head>
 <body>
@@ -133,60 +41,63 @@
         <img src="1763201430265_1.jpg" alt="Labobo King" class="main-hero-img">
 
         <h1>$LABOBO</h1>
-        <p style="font-size: 1.2rem; max-width: 600px; color: #ccc; margin-bottom: 30px;">
-            More than a meme. A movement. A legacy built on trust and chaos. 
-            Launching soon on <strong>Meteora</strong>.
+        <p style="font-size: 1.3rem; max-width: 750px; color: #ddd; margin-bottom: 30px; line-height: 1.6;">
+            The King of Chaos is here. A decentralized movement built on trust, community, and pure energy. 
+            Official Launching on <strong>METEORA</strong> in 2026.
         </p>
 
         <div class="btn-group">
             <a href="#roadmap" class="btn">Roadmap</a>
             <a href="#tokenomics" class="btn">Tokenomics</a>
-            <a href="https://t.me/LABOBO567" class="btn" style="border-color: var(--primary); color: var(--primary);">Join Community</a>
+            <a href="https://t.me/LABOBO567" class="btn" style="border-color: var(--primary); color: var(--primary);">Join Chaos</a>
         </div>
     </header>
 
     <div class="container" id="tokenomics">
-        <h2 class="section-title">Tokenomics</h2>
+        <h2 class="section-title">Tokenomics & Launch</h2>
         <div class="grid">
             <div class="card">
-                <h3>0% Taxes</h3>
-                <p>Pure growth. No hidden fees. Every transaction supports the holders directly.</p>
+                <h3>Meteora Deployment</h3>
+                <p>Strategic launch using Meteora’s dynamic pools to ensure stable liquidity and fair price discovery for all early supporters.</p>
             </div>
             <div class="card">
-                <h3>Liquidity Burnt</h3>
-                <p>Ensuring maximum security. LP tokens are burnt to guarantee a rug-proof environment.</p>
+                <h3>0% Transaction Tax</h3>
+                <p>No hidden fees. Every $LABOBO you buy or sell stays 100% in your wallet. Community-first economics.</p>
             </div>
             <div class="card">
-                <h3>Meteora Launch</h3>
-                <p>Fair and transparent launch on Meteora dynamic pools for the best trading experience.</p>
+                <h3>Burnt Liquidity</h3>
+                <p>100% of the LP tokens will be sent to the burn address. Maximum security, zero rug-pull risk. Trust is our foundation.</p>
             </div>
         </div>
     </div>
 
     <div class="container" id="roadmap">
-        <h2 class="section-title">Roadmap 2026</h2>
-        <div class="roadmap-item">
-            <h3 style="color: var(--secondary);">Phase 1: The Spark (Q1 2026)</h3>
-            <p>Website v2 Deployment, Community Expansion, and Social Takeover. Establishing the LABOBO Army.</p>
+        <h2 class="section-title">The Grand Strategy 2026</h2>
+        
+        <div class="roadmap-box">
+            <h3>Phase 1: Genesis (Q1 2026)</h3>
+            <p>Smart Contract Deployment, Social Media Takeover, and Community Building. Release of the official $LABOBO interactive portal.</p>
         </div>
-        <div class="roadmap-item">
-            <h3 style="color: var(--secondary);">Phase 2: The Ascension (Q2 2026)</h3>
-            <p>Official Launch on <strong>Meteora</strong>, DEX Listings, and Viral Marketing Campaigns across X and Telegram.</p>
+
+        <div class="roadmap-box">
+            <h3>Phase 2: The Ascension (Q2 2026)</h3>
+            <p>Official Launch on <strong>METEORA</strong>. Viral marketing campaigns, DEX listings, and reaching the first 5,000+ diamond-hand holders.</p>
         </div>
-        <div class="roadmap-item">
-            <h3 style="color: var(--secondary);">Phase 3: The Legacy (Q3-Q4 2026)</h3>
-            <p>NFT Collection Drop, Tier-1 CEX Listing Applications, and Ecosystem Utility Expansion.</p>
+
+        <div class="roadmap-box">
+            <h3>Phase 3: The Legacy (Q3-Q4 2026)</h3>
+            <p>Exclusive NFT Collection Drop for holders. Tier-1 Centralized Exchange (CEX) listings and ecosystem expansion beyond the meme.</p>
         </div>
     </div>
 
-    <div class="container" id="nft" style="text-align: center; border-top: 1px solid #222;">
-        <h2 class="section-title">NFT Collection</h2>
-        <p style="font-size: 1.3rem; color: #888;">Scheduled for late 2026. Get ready for the Royal LABOBO series.</p>
-        <div style="font-family: Orbitron; color: var(--secondary); letter-spacing: 3px;">COMING SOON</div>
+    <div class="container" id="nft" style="text-align: center; background: #0a0a0a; border-radius: 20px;">
+        <h2 class="section-title">Royal NFT Series</h2>
+        <p style="font-size: 1.4rem; color: #888; max-width: 600px; margin: 0 auto 20px;">The chaos continues in the NFT space. Holders of $LABOBO will have priority access to the 2026 limited collection.</p>
+        <span style="color: var(--secondary); font-family: Orbitron; font-size: 1.2rem; letter-spacing: 4px;">[ STATUS: INITIALIZING ]</span>
     </div>
 
     <footer>
-        <p>&copy; 2026 $LABOBO COIN. All Rights Reserved. <br> Built for the community on the Solana Network.</p>
+        <p>&copy; 2026 $LABOBO COIN. ALL RIGHTS RESERVED. <br> Built on Solana. Witness the Chaos. Join the Legacy.</p>
     </footer>
 
 </body>
