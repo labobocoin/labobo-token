@@ -3,147 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$LABOBO | The Royal Chaos on Solana</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <title>$LABOBO | Imperial Sovereign of Solana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #bc13fe; --secondary: #ffcc00; --accent: #00f2ff; --bg: #030305; }
-        body { margin: 0; font-family: 'Rajdhani', sans-serif; background-color: var(--bg); color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
+        :root { --royal-purple: #9d00ff; --king-gold: #ffcc00; --cyber-blue: #00f2ff; --void-black: #020202; }
+        body { margin: 0; font-family: 'Rajdhani', sans-serif; background-color: var(--void-black); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* Floating Social Media */
-        .social-sidebar { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; z-index: 9999; }
-        .social-sidebar a { color: var(--secondary); font-size: 2.2rem; transition: 0.4s; filter: drop-shadow(0 0 5px var(--primary)); }
-        .social-sidebar a:hover { transform: scale(1.3) rotate(10deg); color: var(--accent); }
+        /* Floating HUD Navigation */
+        nav { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(157, 0, 255, 0.2); }
+        .nav-logo { font-family: 'Syncopate'; font-weight: 700; color: var(--king-gold); letter-spacing: 5px; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 30px; font-family: 'Orbitron'; font-size: 0.8rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); }
 
-        /* Hero Section with Parallax Image */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1763201430265_1.jpg'); background-size: cover; background-position: center; border-bottom: 3px solid var(--primary); }
-        
-        .hero-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 50px; box-shadow: 0 0 60px rgba(188, 19, 254, 0.2); border-top: 5px solid var(--secondary); }
-        
-        h1 { font-family: 'Orbitron', sans-serif; font-size: 5.5rem; color: var(--secondary); text-shadow: 0 0 30px var(--primary); margin: 0; letter-spacing: 10px; }
-        
-        /* Presale Countdown Box */
-        .countdown-container { margin: 30px 0; border: 2px solid var(--accent); padding: 15px; border-radius: 10px; background: rgba(0, 242, 255, 0.05); }
-        .countdown-title { color: var(--accent); font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; }
+        /* Hero Cinema Section */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at center, #1a0033 0%, var(--void-black) 100%); position: relative; text-align: center; padding: 0 20px; }
+        .hero-img { width: 450px; max-width: 90%; border-radius: 30px; box-shadow: 0 0 50px var(--royal-purple); border: 2px solid var(--royal-purple); margin-bottom: 30px; animation: hoverEffect 4s infinite ease-in-out; }
+        @keyframes hoverEffect { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.02); } }
 
-        .btn-buy { background: linear-gradient(45deg, var(--secondary), #ffd700); color: #000; padding: 22px 70px; font-size: 1.6rem; font-family: 'Orbitron'; font-weight: 900; text-decoration: none; border-radius: 5px; box-shadow: 0 0 30px var(--secondary); transition: 0.3s; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); }
-        .btn-buy:hover { transform: scale(1.05); box-shadow: 0 0 50px var(--accent); }
+        h1 { font-family: 'Orbitron'; font-size: clamp(3rem, 10vw, 6rem); color: var(--king-gold); margin: 0; text-transform: uppercase; letter-spacing: 15px; filter: drop-shadow(0 0 20px var(--royal-purple)); }
+        .status-badge { background: rgba(0, 242, 255, 0.1); border: 1px solid var(--cyber-blue); color: var(--cyber-blue); padding: 8px 25px; border-radius: 50px; font-family: 'Orbitron'; font-size: 0.9rem; margin-top: 20px; text-transform: uppercase; }
 
-        /* Tokenomics Design */
+        /* Pre-sale Launch Box */
+        .presale-card { margin-top: 40px; padding: 30px; border: 1px solid var(--king-gold); background: rgba(255, 204, 0, 0.03); border-radius: 5px; position: relative; }
+        .btn-launch { background: var(--king-gold); color: #000; padding: 20px 60px; font-family: 'Orbitron'; font-weight: 900; text-decoration: none; display: inline-block; margin-top: 20px; transition: 0.4s; box-shadow: 0 0 30px var(--king-gold); }
+        .btn-launch:hover { transform: scale(1.1); box-shadow: 0 0 50px var(--cyber-blue); }
+
+        /* Tokenomics Matrix */
         .container { padding: 100px 10%; }
-        .section-title { font-family: 'Orbitron'; font-size: 3.5rem; text-align: center; margin-bottom: 60px; background: linear-gradient(to right, var(--secondary), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .glass-card { background: rgba(20, 20, 20, 0.8); padding: 40px; border-radius: 20px; border: 1px solid #333; position: relative; transition: 0.4s; overflow: hidden; }
-        .glass-card:hover { border-color: var(--accent); transform: translateY(-10px); }
-        .glass-card h3 { color: var(--secondary); font-family: 'Orbitron'; font-size: 1.8rem; margin-top: 0; }
-        .tax-percent { font-size: 4rem; font-weight: 900; color: var(--accent); opacity: 0.3; position: absolute; right: 10px; top: 10px; }
+        .grid-tax { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .tax-item { background: #080808; border: 1px solid #1a1a1a; padding: 40px; border-radius: 10px; transition: 0.3s; position: relative; }
+        .tax-item:hover { border-color: var(--royal-purple); transform: scale(1.03); }
+        .tax-value { font-family: 'Orbitron'; font-size: 3.5rem; color: var(--king-gold); display: block; margin-bottom: 10px; }
 
-        /* NFT Levels */
-        .nft-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 50px; }
-        .nft-tier { flex: 1; padding: 30px; border-radius: 15px; text-align: center; border: 2px solid #222; transition: 0.3s; }
-        .bronze { border-color: #cd7f32; background: rgba(205, 127, 50, 0.05); }
-        .silver { border-color: #c0c0c0; background: rgba(192, 192, 192, 0.05); }
-        .gold { border-color: #ffd700; background: rgba(255, 215, 0, 0.05); box-shadow: 0 0 20px #ffd70044; }
+        /* NFT Sovereign Levels */
+        .nft-tiers { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+        .tier { flex: 1; min-width: 250px; padding: 30px; border: 1px solid #222; border-radius: 15px; text-align: center; transition: 0.5s; }
+        .tier.gold { border-color: var(--king-gold); background: linear-gradient(to bottom, rgba(255,204,0,0.05), transparent); }
+        .tier.gold:hover { box-shadow: 0 0 40px var(--king-gold); }
 
-        /* Roadmap Section */
-        .roadmap-line { border-left: 2px solid var(--primary); margin-left: 20px; padding-left: 40px; }
-        .roadmap-item { margin-bottom: 60px; position: relative; }
-        .roadmap-item::before { content: '★'; position: absolute; left: -52px; top: 0; color: var(--secondary); font-size: 1.5rem; background: var(--bg); padding: 5px; }
+        /* Roadmap vertical flow */
+        .roadmap-v { border-left: 2px solid var(--royal-purple); padding-left: 40px; max-width: 800px; margin: 0 auto; }
+        .v-step { margin-bottom: 60px; position: relative; }
+        .v-step::before { content: ''; position: absolute; left: -51px; top: 5px; width: 20px; height: 20px; background: var(--king-gold); border-radius: 50%; box-shadow: 0 0 15px var(--king-gold); }
 
-        footer { text-align: center; padding: 80px; background: #000; border-top: 2px solid #111; color: #555; font-size: 1.1rem; }
+        footer { padding: 80px; text-align: center; border-top: 1px solid #111; color: #444; font-family: 'Syncopate'; }
+
     </style>
 </head>
 <body>
 
-    <div class="social-sidebar">
-        <a href="https://x.com/CoinLabobo" target="_blank" title="Follow us on X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://t.me/LABOBO567" target="_blank" title="Join Telegram"><i class="fab fa-telegram"></i></a>
-    </div>
+    <nav>
+        <div class="nav-logo">LABOBO</div>
+        <div class="nav-links">
+            <a href="https://x.com/CoinLabobo" target="_blank"><i class="fab fa-x-twitter"></i> X.COM</a>
+            <a href="https://t.me/LABOBO567" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a>
+            <a href="#tokenomics">TOKENOMICS</a>
+        </div>
+    </nav>
 
     <section class="hero">
-        <div class="hero-glass">
-            <h1>$LABOBO</h1>
-            <p style="font-size: 1.6rem; color: #aaa; letter-spacing: 5px; font-weight: bold;">EMPIRE OF THE CHAOTIC KING</p>
-            
-            <div class="countdown-container">
-                <div class="countdown-title">PRESALE LIVE IN: JANUARY 10, 2026</div>
-                <p>Meteora Launch Post-Presale | Liquidity Locked Forever</p>
-            </div>
-
-            <a href="https://t.me/LABOBO567" target="_blank" class="btn-buy">ENTER THE PRESALE</a>
-            
-            <p style="margin-top: 25px; color: var(--secondary); font-weight: bold;">
-                <i class="fas fa-shield-alt"></i> TEAM TOKENS LOCKED FOR 2 YEARS (2026-2028)
-            </p>
+        <img src="1763201430265_1.jpg" alt="Labobo King" class="hero-img">
+        <h1>$LABOBO</h1>
+        <div class="status-badge">Protocol Initializing: Jan 10, 2026</div>
+        
+        <div class="presale-card">
+            <h2 style="font-family: 'Orbitron'; color: var(--cyber-blue);">PRE-SALE COMMENCING IN 5 DAYS</h2>
+            <p style="color: #888;">Allocated for early believers. Meteora Dynamic Liquidity to follow.</p>
+            <a href="https://t.me/LABOBO567" class="btn-launch">SECURE YOUR ALLOCATION</a>
         </div>
+
+        <p style="margin-top: 30px; font-family: 'Orbitron'; color: var(--royal-purple);">
+            <i class="fas fa-lock"></i> TEAM VESTING: 24 MONTHS LOCK
+        </p>
     </section>
 
     <div class="container" id="tokenomics">
-        <h2 class="section-title">Revolutionary Tokenomics</h2>
-        <div class="grid">
-            <div class="glass-card">
-                <div class="tax-percent">2%</div>
-                <h3>Auto-LP Supply</h3>
-                <p>Directly fed into the Meteora Liquidity Pool. Guaranteed price floor growth without human interference.</p>
+        <h2 style="font-family: 'Orbitron'; text-align: center; font-size: 3rem; margin-bottom: 50px;">Protocol <span style="color: var(--king-gold);">Taxation</span></h2>
+        <div class="grid-tax">
+            <div class="tax-item">
+                <span class="tax-value">2%</span>
+                <h3 style="color: var(--cyber-blue);">Autonomous Liquidity</h3>
+                <p>Funds are instantly locked into Meteora pools to ensure a rising price floor and market depth.</p>
             </div>
-            <div class="glass-card">
-                <div class="tax-percent">2%</div>
-                <h3>NFT Ecosystem</h3>
-                <p>Dedicated funds for the Bronze, Silver, and Gold LABOBO series development and partnerships.</p>
+            <div class="tax-item">
+                <span class="tax-value">2%</span>
+                <h3 style="color: var(--cyber-blue);">Empire Development</h3>
+                <p>Fueling the development of the NFT ecosystem and securing Tier-1 global partnerships.</p>
             </div>
-            <div class="glass-card">
-                <div class="tax-percent">1%</div>
-                <h3>Global Charity</h3>
-                <p>Transparent and documented donations to verified world-wide humanitarian causes. Meme with a heart.</p>
+            <div class="tax-item">
+                <span class="tax-value">1%</span>
+                <h3 style="color: var(--cyber-blue);">Humanitarian Fund</h3>
+                <p>Distributed to on-chain verified charities. Impacting the real world through decentralized chaos.</p>
             </div>
         </div>
     </div>
 
-    <div class="container" style="background: rgba(188, 19, 254, 0.02);">
-        <h2 class="section-title">Royal NFT Hierarchy</h2>
-        <p style="text-align: center; font-size: 1.3rem; color: #888; margin-bottom: 40px;">Stake $LABOBO to unlock your Royal Rank</p>
-        <div class="nft-grid">
-            <div class="nft-tier bronze">
-                <h3>BRONZE</h3>
-                <p>Basic DAO Access & Community Badge</p>
+    <div class="container" style="background: #050505; border-radius: 50px;">
+        <h2 style="font-family: 'Orbitron'; text-align: center; font-size: 2.5rem; margin-bottom: 40px;">NFT <span style="color: var(--king-gold);">Sovereignty</span></h2>
+        <div class="nft-tiers">
+            <div class="tier">
+                <h3 style="color: #cd7f32;">BRONZE</h3>
+                <p>Community Access & Voting Power</p>
             </div>
-            <div class="nft-tier silver">
-                <h3>SILVER</h3>
-                <p>Priority Airdrops & Exclusive Discord Access</p>
+            <div class="tier">
+                <h3 style="color: #c0c0c0;">SILVER</h3>
+                <p>Enhanced Staking Rewards & Airdrops</p>
             </div>
-            <div class="nft-tier gold">
-                <h3>GOLDEN</h3>
-                <p>Royal Governance Rights & 1% Revenue Share</p>
+            <div class="tier gold">
+                <h3 style="color: var(--king-gold);">GOLDEN</h3>
+                <p>Royal Governance & Revenue Sharing</p>
             </div>
         </div>
     </div>
 
     <div class="container" id="roadmap">
-        <h2 class="section-title">Strategic Conquest</h2>
-        <div class="roadmap-line">
-            <div class="roadmap-item">
-                <h3 style="color: var(--secondary);">JANUARY 10, 2026: The Genesis</h3>
-                <p>Presale Launch. Global marketing push with Tier-1 KOLs. Website v3 deployment.</p>
+        <h2 style="font-family: 'Orbitron'; text-align: center; font-size: 3rem; margin-bottom: 60px;">The <span style="color: var(--king-gold);">Conquest</span></h2>
+        <div class="roadmap-v">
+            <div class="v-step">
+                <h3 style="color: var(--king-gold);">JAN 10, 2026: Genesis Pre-sale</h3>
+                <p>The spark of chaos. Limited pre-sale for the core community. Aggressive marketing initiation.</p>
             </div>
-            <div class="roadmap-item">
-                <h3 style="color: var(--accent);">Q1 2026: METEORA ASCENSION</h3>
-                <p>Official Public Launch on Meteora. Fair price discovery. 100% Liquidity Burned.</p>
+            <div class="v-step">
+                <h3 style="color: var(--cyber-blue);">Q1 2026: Meteora Deployment</h3>
+                <p>Official public launch on Meteora. 100% LP Burned. Global price discovery begins.</p>
             </div>
-            <div class="roadmap-item">
-                <h3 style="color: var(--primary);">2026 END: THE ROYAL MINT</h3>
-                <p>Launching the Bronze, Silver & Gold NFT Collection. Exclusive for $LABOBO Diamond Hands.</p>
+            <div class="v-step">
+                <h3 style="color: var(--royal-purple);">Q4 2026: NFT Sovereign Mint</h3>
+                <p>Unleashing the Bronze, Silver, and Gold collections. Staking utility live.</p>
             </div>
-            <div class="roadmap-item">
-                <h3 style="color: #fff;">2027: GLOBAL DOMINANCE</h3>
-                <p>Launching **LABOBO WALLET** (Non-Custodial). Tier-1 CEX Listings. Charity Expansion.</p>
+            <div class="v-step">
+                <h3 style="color: #fff;">2027: Imperial Expansion</h3>
+                <p>Launch of the **LABOBO Wallet**. Tier-1 CEX Listings. Global charitable missions.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 $LABOBO COIN | Verified Chaos on Solana Network</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Trading meme coins carries risk. Join the movement responsibly.</p>
+        <div style="margin-bottom: 20px;">
+            <a href="https://x.com/CoinLabobo" target="_blank" style="color: #fff; font-size: 2rem; margin: 0 15px;"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://t.me/LABOBO567" target="_blank" style="color: #fff; font-size: 2rem; margin: 0 15px;"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p>&copy; 2026 $LABOBO PROTOCOL. WITNESS THE CHAOS.</p>
+        <p style="font-size: 0.7rem; letter-spacing: 2px;">$LABOBO IS A HIGH-UTILITY ASSET. TRADE RESPONSIBLY.</p>
     </footer>
 
 </body>
